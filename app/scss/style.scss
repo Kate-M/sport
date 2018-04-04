@@ -298,6 +298,7 @@ img {
   }
 }
 .user-panel-link {
+user-select: none;
  letter-spacing: 1px;
   &:not(:last-child) {
     margin-left: 21px;
@@ -338,14 +339,14 @@ img {
   @include sprites-ico(-54px, -10px);
 }
 /*========================= Intro Section =========================*/
-.event-section {
+.intro-section {
   color:$color_dark_text;
   position: relative;
 }
-.event-tab {
+.partition-tab {
   margin-right: 96px;
 }
-.event-menu-button {
+.partition-button {
   display: none;
   font-family: $font_SSBK;
   font-size: $size_14_4;
@@ -368,7 +369,7 @@ img {
     width:100%;
   }
 }
-.event-tab-list {
+.partition-tab-list {
   display: flex;
   &::after {
     content: "";
@@ -380,7 +381,7 @@ img {
     flex-direction: column;
   }
 }
-.event-content {
+.partition-content {
   background: lightskyblue;
 	display: none;
 	position: absolute;
@@ -392,7 +393,7 @@ img {
   overflow-y: auto;
   z-index: -1;
 }
-.event-tab-item {
+.partition-tab-item {
   width: 25%;
   @include breakpoint(max-width 600px) {
     width: 100%;
@@ -400,7 +401,7 @@ img {
   & > input {
     display: none;
   }
-  & > .event-name-tab {
+  & > .partition-name-tab {
     @include center-all;
     letter-spacing: 0.6px;
     height: 60px;
@@ -424,15 +425,15 @@ img {
       transform: translateX(0);
     }
   }
-  &:last-child > .event-name-tab {
+  &:last-child > .partition-name-tab {
     border-right-width: 1px;
   }
-  & > input:checked + .event-name-tab {
+  & > input:checked + .partition-name-tab {
     background-color: $color_main;
     border-color:$color_main;
     color:$color_white;
   }
-  & > input:checked ~ .event-content {
+  & > input:checked ~ .partition-content {
     display: block;
   }
 }
@@ -460,7 +461,7 @@ img {
   height: 28px;
   @include sprites-ico(-10px, 274px);
 }
-.event1-thumbnail{
+.partition1-thumbnail{
   background: url(../images/intro0.jpg) no-repeat;
   background-size: cover;
   background-position-y: 20%;
