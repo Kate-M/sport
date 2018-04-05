@@ -1,0 +1,15 @@
+.header-top {
+    background: #2d2d2d;
+    position: relative;
+    width: 100%;
+    @include center-v;
+    justify-content: space-between;
+    height: 86px;
+    padding: 0 40px;
+    @include breakpoint(max-width 600px) {
+      padding: 0 20px;
+    }
+  }
+@import "navigation";
+@import "search";
+@import "user";

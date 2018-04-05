@@ -1,0 +1,37 @@
+.header-search-panel {
+    position: relative;
+    margin-right: 55px;
+    display: none;
+    @include breakpoint(min-width 992px) {
+      @include center-v;
+    }
+    &:after {
+      content: '';
+      display: block;
+      @include sprites-ico(-31px, -10px);
+      position: absolute;
+      top:50%;
+      margin-top:-7.5px;
+      right: 14px;
+      width: 13px;
+      height: 15px;
+    }
+    :-ms-input-placeholder {
+      font-size: 1.1rem;
+      color: #ababab;
+      letter-spacing: 0.4px;
+    }
+    ::-webkit-input-placeholder {
+      font-size: 1.1rem;
+      color: #ababab;
+      letter-spacing: 0.4px;
+    }
+  }
+  .search-field {
+    padding: 0 31px 0 14px;
+    height: 28px;
+    width: 340px;
+    background:#626262;
+    border: 1px solid #252525;
+    border-radius: 3px;
+  }

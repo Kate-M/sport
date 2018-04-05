@@ -12,6 +12,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var clean = require('gulp-clean');
 var order = require('gulp-order');
+var sass = require('gulp-sass');
 
 var path_scss = './app/scss';
 var path_css = './dist/css';
@@ -20,13 +21,11 @@ var path_dist_js = './dist/js';
 var path_app_images = './app/images';
 var path_dist_images = './dist/images';
 
-// Проверка ошибок в скриптах
 gulp.task('lint', function () {
     return gulp.src(path_app_js + '/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
-// minify images
 gulp.task('images', function () {
     return gulp.src(path_app_images + '/**/*.{jpg,png,svg,jpeg}')
         .pipe(cache(imagemin({
@@ -40,7 +39,6 @@ gulp.task('images', function () {
         .pipe(gulp.dest(path_dist_images));
 });
 
-// Чистим директорию назначения и делаем ребилд, чтобы удаленные из проекта файлы не остались
 gulp.task('clean', function() {
   return gulp.src([path_dist_images, path_dist_js, path_css], {read: false})
     .pipe(clean());
@@ -49,22 +47,18 @@ gulp.task('clean', function() {
 gulp.task('scripts', function () {
     return gulp.src(path_app_js + '/**/*.js')
         .pipe(order([
-            "jquery-1.12.3.min.js",
+            "libs/jquery-1.12.3.min.js",
+            "libs/classie.js",
             "slick.min.js",
-            "wow.js",
-            "modernizr.custom.js",
-            "classie.js",
-            "bootstrap.min.js",
             "**/*.js"
         ]))
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(path_dist_js))
         .pipe(rename('scripts.min.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(path_dist_js));
 });
 
-// собирает css из scss
 gulp.task('sass', function () {
     gulp.src(path_scss + '/**/*.scss')
         .pipe(compass({
@@ -72,6 +66,10 @@ gulp.task('sass', function () {
             css: path_css,
             sass: path_scss
         }))
+        .pipe(sass({
+            includePaths: require('node-reset-scss').includePaths
+        }))  
+        .pipe(gulp.dest(path_css))
         .pipe(prefix("last 5 version", "ie 8", "ie 7"))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path_css))
@@ -91,7 +89,6 @@ gulp.task('sass:watch', function () {
     gulp.watch(path_app_images + '/**/*', ['images']);
 });
 
-//gulp.task('default', ['sass:watch']);
 gulp.task('default', ['clean','sass:watch'], function() {
     gulp.start('sass', 'scripts', 'images');
 });

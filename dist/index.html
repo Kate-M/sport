@@ -20,73 +20,126 @@
 </head>
 
 <body>
-	<header>
-		<div class="header-top">
-			<div class="header-navigation-panel">
-				<button class="navbar-top-button JSmenuBotton"></button>
-				<nav class="navbar-top">
-					<ul class="navbar-list">
-						<li class="">
-							<a href="" class="navbar-item" target="blank">About</a>
-						</li>
-						<li class="">
-							<a href="" class="navbar-item" target="blank">News</a>
-						</li>
-						<li class="">
-							<a href="" class="navbar-item" target="blank">Contact</a>
-						</li>
-					</ul>
-				</nav>
-				<a href="#" class="header-logo-wrap">
-					<img src="images/logo.png" alt="Prime Sport Logo">
-				</a>
+	<div class="page-wrapper">
+		<header>
+			<div class="header-top">
+				<div class="header-navigation-panel">
+					<button class="navbar-top-button"></button>
+					<nav class="navbar-top">
+						<ul class="navbar-list">
+							<li>
+								<a href="" class="navbar-item" target="blank">About</a>
+							</li>
+							<li>
+								<a href="" class="navbar-item" target="blank">News</a>
+							</li>
+							<li>
+								<a href="" class="navbar-item" target="blank">Contact</a>
+							</li>
+						</ul>
+					</nav>
+					<a href="#">
+						<h1>
+							<img src="images/logo.png" alt="Prime Sport Logo">
+						</h1>
+					</a>
+				</div>
+				<div class="header-search-panel">
+					<input type="text" class="search-field" placeholder="Search for event, team, or city">
+				</div>
+				<div class="header-user-panel">
+					<a href="" class="user-panel-link login-button">Log In</a>
+					<a href="" class="user-panel-link user-count">1.800.591.9198</a>
+					<a href="" class="user-panel-link user-connect"></a>
+				</div>
 			</div>
-			<div class="header-serch-panel">
-				<input type="text" class="search-field" placeholder="Search for event, team, or city">
-			</div>
-			<div class="header-user-panel">
-				<a href="" class="user-panel-link user-login-button">Log In</a>
-				<a href="" class="user-panel-link user-count">1.800.591.9198</a>
-				<a href="" class="user-panel-link user-connect"></a>
-			</div>
-		</div>
 		</header>
 		<section class="intro-section">
 			<div class="partition-tab">
-					<button class="partition-button JSpartitionBotton">Events...</button>
-					<ul class="partition-tab-list">
-						<li class="partition-tab-item">
-							<input type="radio" name="tabs" id="tab-1" checked>
-							<label class="partition-name-tab JSpartitionNameTab" for="tab-1">Events &amp; Packages</label>
-							<div class="partition-content partition1-thumbnail">
-								Tab1
+				<button class="partition-button">Partition...</button>
+				<ul class="tab-list partition-tab-list">
+					<li class="partition-tab-item tab-item">
+						<input type="radio" name="tabs" id="tab-1" checked>
+						<label class="partition-name-tab" for="tab-1">Events &amp; Packages</label>
+						<div class="partition-content main-content">
+							<div class="container">
+								<ul class="tab-list partition-subtab-list">
+									<li class="tab-item partition-subtab-item">
+										<input type="radio" name="subtabs" id="subtab-1" checked>
+										<label class="partition-name-tab" for="subtab-1">Kentucky Derby</label>
+										<div class="partition-content sub-content partition1-thumbnail">
+											<div class="container-lg">
+												<div class="partition-info">
+													<p class="partition-date">May 02, 2015</p>
+													<p class="partition-title">Experience the Kentucky
+														<br> Derby Like Never Before.</p>
+													<p class="partition-autor">Churchill Downs, Louisville, KY</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="tab-item partition-subtab-item">
+										<input type="radio" name="subtabs" id="subtab-2">
+										<label class="partition-name-tab" for="subtab-2">Super Bowl 50</label>
+										<div class="partition-content sub-content">
+											Tab22
+										</div>
+									</li>
+									<li class="tab-item partition-subtab-item">
+										<input type="radio" name="subtabs" id="subtab-3">
+										<label class="partition-name-tab" for="subtab-3">The Masters</label>
+										<div class="partition-content sub-content">
+											Tab23
+										</div>
+									</li>
+									<li class="tab-item partition-subtab-item">
+										<input type="radio" name="subtabs" id="subtab-4">
+										<label class="partition-name-tab" for="subtab-4">The Experience</label>
+										<div class="partition-content sub-content">
+											Tab24
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-						<li class="partition-tab-item">
-							<input type="radio" name="tabs" id="tab-2">
-							<label class="partition-name-tab JSpartitionNameTab" for="tab-2">Pro Sports</label>
-							<div class="partition-content">
-								Tab2
-							</div>
-						</li>
-						<li class="partition-tab-item">
-							<input type="radio" name="tabs" id="tab-3">
-							<label class="partition-name-tab JSpartitionNameTab" for="tab-3">College Sports</label>
-							<div class="partition-content">
-								Tab3
-							</div>
-						</li>
-						<li class="partition-tab-item">
-							<input type="radio" name="tabs" id="tab-4">
-							<label class="partition-name-tab JSpartitionNameTab" for="tab-4">Motorsports</label>
-							<div class="partition-content">
-								Tab4
-							</div>
-						</li>
-					</ul>
+						</div>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<input type="radio" name="tabs" id="tab-2">
+						<label class="partition-name-tab" for="tab-2">Pro Sports</label>
+						<div class="partition-content main-content">
+							Tab2
+						</div>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<input type="radio" name="tabs" id="tab-3">
+						<label class="partition-name-tab" for="tab-3">College Sports</label>
+						<div class="partition-content main-content">
+							Tab3
+						</div>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<input type="radio" name="tabs" id="tab-4">
+						<label class="partition-name-tab" for="tab-4">Motorsports</label>
+						<div class="partition-content">
+							Tab4
+						</div>
+					</li>
+				</ul>
+				<div class="common-info">
+					<button class="packages-button">View Packages</button>
+					<div class="time-counter">
+						<span class="count-days">147</span> :
+						<span class="count-hrs">18</span> :
+						<span class="count-min">04</span> :
+						<span class="count-sec">12</span>
+					</div>
+				</div>
 			</div>
-			<button class="cart-button"><span class="cart-button-icon"></span></button>
+			<button class="cart-button">
+				<span class="cart-button-icon"></span>
+			</button>
 		</section>
+	</div>
 
 	<script src="js/scripts.js"></script>
 </body>

@@ -1,58 +1,6 @@
-/*font*/
-@font-face {
-  font-family: 'GothamCondensedBold';
-  src: url("../fonts/GothamCondensed/Bold/GothamCondensedBold.eot?v=4.6.2");
-  src: url("../fonts/GothamCondensed/Bold/GothamCondensedBold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/GothamCondensed/Bold/GothamCondensedBold.woff2?v=4.6.2") format("woff2"), url("../fonts/GothamCondensed/Bold/GothamCondensedBold.woff?v=4.6.2") format("woff"), url("../fonts/GothamCondensed/Bold/GothamCondensedBold.ttf?v=4.6.2") format("truetype"), url("../fonts/GothamCondensed/Bold/GothamCondensedBold.svg?v=4.6.2#gothamCondensedBold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Bold';
-  src: url("../fonts/StagSans/Bold/StagSans-Bold.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Bold/StagSans-Bold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Bold/StagSans-Bold.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Bold/StagSans-Bold.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Bold/StagSans-Bold.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Bold/StagSans-Bold.svg?v=4.6.2#stagSansBold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Book';
-  src: url("../fonts/StagSans/Book/StagSans-Book.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Book/StagSans-Book.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Book/StagSans-Book.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Book/StagSans-Book.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Book/StagSans-Book.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Book/StagSans-Book.svg?v=4.6.2#stagSansBook") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Light';
-  src: url("../fonts/StagSans/Light/StagSans-Light.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Light/StagSans-Light.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Light/StagSans-Light.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Light/StagSans-Light.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Light/StagSans-Light.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Light/StagSans-Light.svg?v=4.6.2#stagSansLight") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Medium';
-  src: url("../fonts/StagSans/Medium/StagSans-Medium.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Medium/StagSans-Medium.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Medium/StagSans-Medium.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Medium/StagSans-Medium.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Medium/StagSans-Medium.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Medium/StagSans-Medium.svg?v=4.6.2#stagSansMedium") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Semibold';
-  src: url("../fonts/StagSans/Semibold/StagSans-Semibold.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Semibold/StagSans-Semibold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Semibold/StagSans-Semibold.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Semibold/StagSans-Semibold.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Semibold/StagSans-Semibold.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Semibold/StagSans-Semibold.svg?v=4.6.2#stagSansSemibold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'StagSans-Thin';
-  src: url("../fonts/StagSans/Thin/StagSans-Thin.eot?v=4.6.2");
-  src: url("../fonts/StagSans/Thin/StagSans-Thin.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Thin/StagSans-Thin.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Thin/StagSans-Thin.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Thin/StagSans-Thin.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Thin/StagSans-Thin.svg?v=4.6.2#stagSansThin") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-/* Eric Meyer's CSS Reset
-   http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
-   This is a Sass partial
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -71,43 +19,31 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  outline: none;
-  box-sizing: border-box;
-  color: inherit;
-}
+  font: inherit;
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
-
-a {
-  text-decoration: none;
-}
+  border-spacing: 0; }
 
 /*! normalize.scss v0.1.0 | MIT License | based on git.io/normalize */
 /**
@@ -121,15 +57,13 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove default margin.
  */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -152,8 +86,7 @@ menu,
 nav,
 section,
 summary {
-  display: block;
-}
+  display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
@@ -166,8 +99,7 @@ video {
   display: inline-block;
   /* 1 */
   vertical-align: bottom;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
@@ -175,8 +107,7 @@ video {
  */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Address `[hidden]` styling not present in IE 8/9/10.
@@ -184,8 +115,7 @@ audio:not([controls]) {
  */
 [hidden],
 template {
-  display: none;
-}
+  display: none; }
 
 /* Links
    ========================================================================== */
@@ -193,16 +123,14 @@ template {
  * Remove the gray background color from active links in IE 10.
  */
 a {
-  background-color: transparent;
-}
+  background-color: transparent; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
 a:active,
 a:hover {
-  outline: 0;
-}
+  outline: 0; }
 
 /* Text-level semantics
    ========================================================================== */
@@ -210,23 +138,20 @@ a:hover {
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
 abbr[title] {
-  border-bottom: 1px dotted;
-}
+  border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
 b,
 strong {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /**
  * Address styling not present in Safari and Chrome.
  */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
@@ -234,23 +159,20 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
 
 /**
  * Address styling not present in IE 8/9.
  */
 mark {
   background: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 /**
  * Address inconsistent and variable font size in all browsers.
  */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
@@ -260,16 +182,13 @@ sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
 
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
 /* Embedded content
    ========================================================================== */
@@ -277,15 +196,13 @@ sub {
  * Remove border when inside `a` element in IE 8/9/10.
  */
 img {
-  border: 0;
-}
+  border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
@@ -293,23 +210,20 @@ svg:not(:root) {
  * Address margin not present in IE 8/9 and Safari.
  */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
 hr {
   box-sizing: content-box;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Contain overflow in all browsers.
  */
 pre {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
@@ -319,8 +233,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 /* Forms
    ========================================================================== */
@@ -342,15 +255,13 @@ textarea {
   color: inherit;
   /* 1 */
   margin: 0;
-  /* 3 */
-}
+  /* 3 */ }
 
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 button {
-  overflow: visible;
-}
+  overflow: visible; }
 
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
@@ -360,8 +271,7 @@ button {
  */
 button,
 select {
-  text-transform: none;
-}
+  text-transform: none; }
 
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -377,16 +287,14 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */
-}
+  /* 3 */ }
 
 /**
  * Re-set default cursor for disabled elements.
  */
 button[disabled],
 html input[disabled] {
-  cursor: default;
-}
+  cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
@@ -394,16 +302,14 @@ html input[disabled] {
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
 input {
-  line-height: normal;
-}
+  line-height: normal; }
 
 /**
  * It's recommended that you don't attempt to style these elements.
@@ -417,8 +323,7 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
@@ -427,8 +332,7 @@ input[type="radio"] {
  */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
@@ -439,8 +343,7 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   /* 2 */
-  box-sizing: content-box;
-}
+  box-sizing: content-box; }
 
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -449,8 +352,7 @@ input[type="search"] {
  */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 /**
  * Define consistent border, margin, and padding.
@@ -458,8 +360,7 @@ input[type="search"]::-webkit-search-decoration {
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
 
 /**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
@@ -469,23 +370,20 @@ legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /* Tables
    ========================================================================== */
@@ -494,119 +392,176 @@ optgroup {
  */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 td,
 th {
-  padding: 0;
-}
+  padding: 0; }
+
+/*font*/
+@font-face {
+  font-family: 'GothamCondensed-Bold';
+  src: url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.eot?v=4.6.2");
+  src: url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.woff2?v=4.6.2") format("woff2"), url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.woff?v=4.6.2") format("woff"), url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.ttf?v=4.6.2") format("truetype"), url("../fonts/GothamCondensed/Bold/GothamCondensed-Bold.svg?v=4.6.2#gothamCondensedBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Bold';
+  src: url("../fonts/StagSans/Bold/StagSans-Bold.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Bold/StagSans-Bold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Bold/StagSans-Bold.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Bold/StagSans-Bold.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Bold/StagSans-Bold.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Bold/StagSans-Bold.svg?v=4.6.2#stagSansBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Book';
+  src: url("../fonts/StagSans/Book/StagSans-Book.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Book/StagSans-Book.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Book/StagSans-Book.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Book/StagSans-Book.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Book/StagSans-Book.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Book/StagSans-Book.svg?v=4.6.2#stagSansBook") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Light';
+  src: url("../fonts/StagSans/Light/StagSans-Light.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Light/StagSans-Light.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Light/StagSans-Light.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Light/StagSans-Light.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Light/StagSans-Light.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Light/StagSans-Light.svg?v=4.6.2#stagSansLight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Medium';
+  src: url("../fonts/StagSans/Medium/StagSans-Medium.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Medium/StagSans-Medium.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Medium/StagSans-Medium.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Medium/StagSans-Medium.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Medium/StagSans-Medium.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Medium/StagSans-Medium.svg?v=4.6.2#stagSansMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Semibold';
+  src: url("../fonts/StagSans/Semibold/StagSans-Semibold.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Semibold/StagSans-Semibold.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Semibold/StagSans-Semibold.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Semibold/StagSans-Semibold.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Semibold/StagSans-Semibold.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Semibold/StagSans-Semibold.svg?v=4.6.2#stagSansSemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'StagSans-Thin';
+  src: url("../fonts/StagSans/Thin/StagSans-Thin.eot?v=4.6.2");
+  src: url("../fonts/StagSans/Thin/StagSans-Thin.eot?#iefix&v=4.6.2") format("embedded-opentype"), url("../fonts/StagSans/Thin/StagSans-Thin.woff2?v=4.6.2") format("woff2"), url("../fonts/StagSans/Thin/StagSans-Thin.woff?v=4.6.2") format("woff"), url("../fonts/StagSans/Thin/StagSans-Thin.ttf?v=4.6.2") format("truetype"), url("../fonts/StagSans/Thin/StagSans-Thin.svg?v=4.6.2#stagSansThin") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 *, *:before, *:after {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 * {
-  transition: background .3s, color .3s;
-}
+  transition: background .3s, color .3s; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
 
 h1, figure, fieldset {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 input, select, textarea, option {
   -webkit-appearance: none;
-  border-radius: 0;
-}
+  border-radius: 0; }
+
 input:focus, input:active, select:focus, select:active, textarea:focus, textarea:active, option:focus, option:active {
-  outline: 0;
-}
+  outline: 0; }
 
 label {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none;
-}
+          user-select: none; }
 
 fieldset {
-  border: none;
-}
+  border: none; }
+
+html {
+  font-size: 62.5%; }
 
 body, html {
   width: 100%;
   height: 100%;
   line-height: 1;
   font-family: "StagSans-Book";
-}
+  font-size: 62.5%; }
 
-html {
-  font-size: 100%;
-}
+body {
+  overflow-x: hidden;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px; }
 
 button {
+  cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: 0;
   padding: 0;
-  background: transparent;
-}
+  background: transparent; }
+
 button:focus, button:active {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  outline: none;
-}
+  outline: none; }
 
 img {
   max-width: 100%;
-  vertical-align: bottom;
-}
+  vertical-align: bottom; }
+
+.page-wrapper {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s; }
+
+.page-wrapper.open {
+  -webkit-transform: translateX(300px);
+      -ms-transform: translateX(300px);
+          transform: translateX(300px);
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s; }
 
 .content {
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-}
+          flex: 1 0 auto; }
 
 .container {
-  width: 85%;
-  margin: 0 auto;
-}
+  width: 100%;
+  margin: 0 auto; }
+
 @media (min-width: 768px) {
   .container {
-    width: 720px;
-  }
-}
+    max-width: 720px; } }
+
 @media (min-width: 992px) {
   .container {
-    width: 938px;
-  }
-}
+    max-width: 938px; } }
 
 .container-lg {
-  margin: 0 auto;
-}
+  width: 100%;
+  margin: 0 auto; }
+
 @media (min-width: 768px) {
   .container-lg {
-    width: 720px;
-  }
-}
+    max-width: 720px; } }
+
 @media (min-width: 992px) {
   .container-lg {
-    width: 938px;
-  }
-}
+    max-width: 938px; } }
+
 @media (min-width: 1200px) {
   .container-lg {
-    width: 1280px;
-  }
-}
+    max-width: 1140px; } }
 
-/*========================= Header =========================*/
 .header-top {
   background: #2d2d2d;
   position: relative;
@@ -621,13 +576,11 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 86px;
-  padding: 0 40px;
-}
+  padding: 0 40px; }
+
 @media (max-width: 600px) {
   .header-top {
-    padding: 0 20px;
-  }
-}
+    padding: 0 20px; } }
 
 .header-navigation-panel {
   display: -webkit-flex;
@@ -635,8 +588,7 @@ img {
   display: flex;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-}
+          align-items: center; }
 
 .navbar-top-button {
   width: 38px;
@@ -651,8 +603,8 @@ img {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  transition: none;
-}
+  transition: none; }
+
 .navbar-top-button:after {
   content: '';
   display: block;
@@ -661,65 +613,63 @@ img {
   margin-left: 20px;
   left: 100%;
   width: 1px;
-  height: 58px;
-}
+  height: 58px; }
+
 .navbar-top-button:hover {
   background-position-x: 169px;
-  transition: none;
-}
+  transition: none; }
+
 .navbar-top-button.open-menu {
-  background-position: 212px -318px;
-}
+  background-position: 212px -318px; }
+
 .navbar-top-button.open-menu:hover {
-  background-position-x: 153px;
-}
+  background-position-x: 153px; }
 
 .navbar-top {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   z-index: 1;
+  height: auto;
+  min-height: 100vh;
   background: #2d2d2d;
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
-          transform: translateX(-100%);
-  transition: -webkit-transform .3s linear;
-  transition: transform .3s linear;
-  transition: transform .3s linear, -webkit-transform .3s linear;
-}
-.navbar-top.open {
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-}
+          transform: translateX(-100%); }
+
+.navbar-top .navbar-list {
+  height: 100%; }
+
 .navbar-top .navbar-item {
   display: block;
-  padding: 30px 120px;
-  color: #ffffff;
-}
-.navbar-top .navbar-item:hover {
-  background: #024b78;
-}
+  padding: 35px;
+  width: 300px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff; }
 
-.header-serch-panel {
+.navbar-top .navbar-item:hover {
+  background: #024b78; }
+
+.header-search-panel {
   position: relative;
   margin-right: 55px;
-  display: none;
-}
+  display: none; }
+
 @media (min-width: 992px) {
-  .header-serch-panel {
+  .header-search-panel {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
         -ms-flex-align: center;
-            align-items: center;
-  }
-}
-.header-serch-panel:after {
+            align-items: center; } }
+
+.header-search-panel:after {
   content: '';
   display: block;
   background: url(../images/ico-sprites.png);
@@ -729,29 +679,25 @@ img {
   margin-top: -7.5px;
   right: 14px;
   width: 13px;
-  height: 15px;
-}
-.header-serch-panel :-ms-input-placeholder {
-  font-family: "StagSans-Book", sans-serif;
-  font-size: 0.6875rem;
+  height: 15px; }
+
+.header-search-panel :-ms-input-placeholder {
+  font-size: 1.1rem;
   color: #ababab;
-  letter-spacing: 0.4px;
-}
-.header-serch-panel ::-webkit-input-placeholder {
-  font-family: "StagSans-Book", sans-serif;
-  font-size: 0.6875rem;
+  letter-spacing: 0.4px; }
+
+.header-search-panel ::-webkit-input-placeholder {
+  font-size: 1.1rem;
   color: #ababab;
-  letter-spacing: 0.4px;
-}
+  letter-spacing: 0.4px; }
 
 .search-field {
-  padding: 0 14px;
+  padding: 0 31px 0 14px;
   height: 28px;
   width: 340px;
   background: #626262;
   border: 1px solid #252525;
-  border-radius: 3px;
-}
+  border-radius: 3px; }
 
 .header-user-panel {
   color: #ffffff;
@@ -761,99 +707,87 @@ img {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.75rem;
-}
+  font-size: 1.2rem; }
+
 @media (max-width: 600px) {
   .header-user-panel {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
+            flex-direction: column; } }
 
 .user-panel-link {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  letter-spacing: 1px;
-}
+  letter-spacing: 1px; }
+
 .user-panel-link:not(:last-child) {
-  margin-left: 21px;
-}
+  margin-left: 21px; }
+
 @media (max-width: 600px) {
   .user-panel-link:not(:last-child) {
-    padding-bottom: 15px;
-  }
-}
-.user-panel-link:last-child {
-  margin-left: 15px;
-}
+    padding-bottom: 15px; } }
 
-.user-login-button {
-  position: relative;
-}
-.user-login-button:hover {
-  color: #024b78;
-}
-.user-login-button::after {
+.user-panel-link:last-child {
+  margin-left: 15px; }
+
+.login-button {
+  position: relative; }
+
+.login-button:hover {
+  color: #024b78; }
+
+.login-button::after {
   content: '|';
   position: absolute;
   left: 100%;
   margin-left: 10px;
-  color: inherit;
-}
+  color: inherit; }
+
 @media (max-width: 600px) {
-  .user-login-button::after {
-    display: none;
-  }
-}
+  .login-button::after {
+    display: none; } }
 
 .user-count {
-  font-family: "StagSans-Bold", sans-serif;
-}
+  font-family: "StagSans-Bold", sans-serif; }
+
 @media (max-width: 600px) {
   .user-count {
-    display: none;
-  }
-}
+    display: none; } }
 
 .user-connect {
   display: block;
   width: 25px;
   height: 25px;
   background: url(../images/ico-sprites.png);
-  background-position: -54px -10px;
-}
+  background-position: -54px -10px; }
 
-/*========================= Intro Section =========================*/
 .intro-section {
   color: #2d2d2d;
-  position: relative;
-}
+  position: relative; }
 
 .partition-tab {
-  margin-right: 96px;
-}
+  margin-right: 96px; }
 
 .partition-button {
   display: none;
   font-family: "StagSans-Book";
-  font-size: 0.9rem;
+  font-size: 1.44rem;
   background: #ffffff;
-  position: relative;
-}
+  position: relative; }
+
 .partition-button::after {
   content: '';
   display: block;
   position: absolute;
   width: 11px;
-  height: 8px;
-}
+  height: 8px; }
+
 .partition-button:hover {
   background: #024b78;
-  color: #ffffff;
-}
+  color: #ffffff; }
+
 @media (max-width: 600px) {
   .partition-button {
     height: 60px;
@@ -866,54 +800,49 @@ img {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 100%;
-  }
-}
+    width: 100%; } }
 
-.partition-tab-list {
+.tab-list {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-}
-.partition-tab-list::after {
+  display: flex; }
+
+.tab-list::after {
   content: "";
   clear: both;
   display: block;
-  height: 240px;
-}
+  height: 240px; }
+
 @media (max-width: 600px) {
-  .partition-tab-list {
+  .tab-list {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
+            flex-direction: column; } }
 
 .partition-content {
-  background: lightskyblue;
   display: none;
   position: absolute;
   left: 0;
-  top: 0;
-  margin-top: 60px;
   width: 100%;
-  height: 500px;
   overflow-y: auto;
-  z-index: -1;
-}
+  z-index: -1; }
 
-.partition-tab-item {
+.main-content {
+  height: 500px;
+  z-index: 0; }
+
+.tab-item {
   width: 25%;
-}
+  height: 60px; }
+
 @media (max-width: 600px) {
-  .partition-tab-item {
-    width: 100%;
-  }
-}
-.partition-tab-item > input {
-  display: none;
-}
-.partition-tab-item > .partition-name-tab {
+  .tab-item {
+    width: 100%; } }
+
+.tab-item > input {
+  display: none; }
+
+.tab-item > .partition-name-tab {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -930,41 +859,43 @@ img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: 0.9rem;
   border: 1px;
-  border-left: 0;
-  border-color: #ebebeb;
-  border-style: solid;
-}
+  border-style: solid; }
+
 @media (max-width: 600px) {
-  .partition-tab-item > .partition-name-tab {
-    -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-            transform: translateX(-100%);
-    background: #ffffff;
-  }
-}
-.partition-tab-item > .partition-name-tab:hover {
+  .tab-item > .partition-name-tab {
+    -webkit-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+            transform: translateX(-200%);
+    background: #ffffff; } }
+
+.tab-item > .partition-name-tab:hover {
   background: rgba(2, 75, 120, 0.8);
-  color: #ffffff;
-  border-color: rgba(2, 75, 120, 0.8);
-}
-.partition-tab-item > .partition-name-tab.open {
+  color: #ffffff; }
+
+.tab-item > .partition-name-tab.open {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
-          transform: translateX(0);
-}
-.partition-tab-item:last-child > .partition-name-tab {
-  border-right-width: 1px;
-}
-.partition-tab-item > input:checked + .partition-name-tab {
+          transform: translateX(0); }
+
+.tab-item:last-child > .partition-name-tab {
+  border-right-width: 1px; }
+
+.tab-item > input:checked + .partition-name-tab {
   background-color: #024b78;
   border-color: #024b78;
-  color: #ffffff;
-}
-.partition-tab-item > input:checked ~ .partition-content {
-  display: block;
-}
+  color: #ffffff; }
+
+.tab-item > input:checked ~ .partition-content {
+  display: block; }
+
+.partition-tab-item > .partition-name-tab {
+  border-color: #ebebeb;
+  font-size: 1.44rem;
+  border-left: 0; }
+
+.partition-tab-item > .partition-name-tab:hover {
+  border-color: rgba(2, 75, 120, 0.8); }
 
 .cart-button {
   background: #f3f3f3;
@@ -981,15 +912,14 @@ img {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 60px;
-}
+  height: 60px; }
+
 .cart-button:hover {
-  background: #024b78;
-}
+  background: #024b78; }
+
 .cart-button:hover .cart-button-icon {
   transition: none;
-  background-position-x: -50px;
-}
+  background-position-x: -50px; }
 
 .cart-button-icon {
   justify-self: center;
@@ -998,15 +928,54 @@ img {
   width: 30px;
   height: 28px;
   background: url(../images/ico-sprites.png);
-  background-position: -10px 274px;
-}
+  background-position: -10px 274px; }
+
+.partition-subtab-list {
+  height: 500px; }
+
+.sub-content {
+  padding-bottom: 60px;
+  height: 100%; }
+
+.partition-subtab-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end; }
+
+.partition-subtab-item > .partition-name-tab {
+  color: #ffffff;
+  border-top: 0;
+  border-bottom: 0;
+  border-color: rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  text-transform: uppercase; }
+
+.partition-subtab-item > .partition-name-tab::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 60px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: rgba(25, 25, 25, 0.2);
+  z-index: -1; }
+
+.partition-subtab-item > .partition-name-tab:hover {
+  border-color: rgba(2, 75, 120, 0.8); }
 
 .partition1-thumbnail {
   background: url(../images/intro0.jpg) no-repeat;
   background-size: cover;
   background-position-y: 20%;
-  color: #ffffff;
-}
+  color: #ffffff; }
+
 .partition1-thumbnail::after {
   content: '';
   display: block;
@@ -1017,4 +986,21 @@ img {
   height: 100%;
   background: #000000;
   opacity: .2;
-}
+  z-index: -1; }
+
+.partition-info {
+  padding-top: 95px;
+  color: #ffffff;
+  font-family: "StagSans-Light", sans-serif; }
+
+.partition-date {
+  font-size: 1.4rem; }
+
+.partition-title {
+  font-family: "GothamCondensed-Bold", sans-serif;
+  font-size: 5.8rem;
+  text-transform: uppercase;
+  padding: 23px 0; }
+
+.partition-autor {
+  font-size: 1.8rem; }

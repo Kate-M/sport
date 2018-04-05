@@ -1,0 +1,19 @@
+$color_white:#ffffff;
+$color_black:#000000;
+$color_gray: #f6f6f6;
+$color_blue:#024b78;
+
+$color_main:$color_blue;
+$color_secondary:$color_gray;
+
+$color_blue_80:transparentize($color_blue,.2);
+
+$font_def:sans-serif;
+$font_ico:icofont;
+$font_SSBL:'StagSans-Bold';
+$font_SSSBL: 'StagSans-Semibold';
+$font_SSBK: 'StagSans-Book';
+$font_SSL: 'StagSans-Light';
+$font_SSM: 'StagSans-Medium';
+$font_SST: 'StagSans-Thin';
+$font_GCBL:'GothamCondensed-Bold';

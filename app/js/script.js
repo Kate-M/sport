@@ -1,12 +1,12 @@
 'use strict'
 
-$('.JSmenuBotton').on('click', function () {
-    $('.navbar-top').toggleClass('open');
+$('.navbar-top-button').on('click', function () {
+    $('.page-wrapper').toggleClass('open');
     $(this).toggleClass('open-menu');
 });
-$('.JSpartitionBotton').on('click', function () {
+$('.partition-button').on('click', function () {
     $('.partition-name-tab').toggleClass('open');
 });
-$('.JSpartitionNameTab').on('click', function () {
+$('.partition-name-tab').on('click', function () {
     $('.partition-name-tab').removeClass('open');
 });

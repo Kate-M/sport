@@ -1,0 +1,34 @@
+.partition-subtab-list {
+    height: 500px;
+  }
+.sub-content {
+    padding-bottom: 60px;
+    height: 100%;
+}
+.partition-subtab-item {
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: flex-end;
+    & > .partition-name-tab {
+      color:$color_white;
+      border-top:0;
+      border-bottom:0;
+      border-color:transparentize($color_white, 0.8);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 60px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: transparentize(#191919, 0.8);
+        z-index: -1;
+      }
+      &:hover {
+        border-color:$color_blue_80;
+      }
+    }
+  }

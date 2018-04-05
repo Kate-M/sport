@@ -1,0 +1,17 @@
+@mixin center-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @mixin center-h {
+    display: flex;
+    justify-content: center;
+  }
+  @mixin center-v {
+    display: flex;
+    align-items: center;
+  }
+  @mixin sprites-ico($x, $y) {
+    background: url(../images/ico-sprites.png);
+    background-position: $x $y;
+  }

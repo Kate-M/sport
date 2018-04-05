@@ -1,0 +1,49 @@
+.header-user-panel {
+    color: $color_white;
+    @include center-v;
+    font-size: 1.2rem;
+    @include breakpoint(max-width 600px) {
+      flex-direction: column;
+    }
+  }
+  .user-panel-link {
+  user-select: none;
+   letter-spacing: 1px;
+    &:not(:last-child) {
+      margin-left: 21px;
+      @include breakpoint(max-width 600px) {
+        padding-bottom:15px
+      }
+    } 
+    &:last-child {
+      margin-left: 15px; 
+    }
+  }
+  .login-button {
+    position: relative;
+    &:hover {
+      color:$color_main;
+    }
+    &::after {
+      content: '|';
+      position: absolute;
+      left: 100%;
+      margin-left: 10px;
+      color:inherit;
+      @include breakpoint(max-width 600px) {
+        display: none;
+      }
+    }
+  }
+  .user-count {
+    font-family: $font_SSBL, $font_def;
+    @include breakpoint(max-width 600px) {
+      display: none;
+    }
+  }
+  .user-connect {
+    display: block;
+    width: 25px;
+    height: 25px;
+    @include sprites-ico(-54px, -10px);
+  }
