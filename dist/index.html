@@ -59,15 +59,32 @@
 				<button class="partition-button">Partition...</button>
 				<ul class="tab-list partition-tab-list">
 					<li class="tab-item partition-tab-item">
-						<input type="radio" name="tabs" id="tab-1" checked>
-						<label class="partition-name-tab" for="tab-1">Events &amp; Packages</label>
-						<div class="partition-content main-content">
-							<div class="container">
-								<ul class="tab-list partition-subtab-list">
-									<li class="tab-item partition-subtab-item">
-										<input type="radio" name="subtabs" id="subtab-1" checked>
-										<label class="partition-name-tab" for="subtab-1">Kentucky Derby</label>
-										<div class="partition-content sub-content partition1-thumbnail">
+						<label class="partition-name-tab active" for="tab-1">Events &amp; Packages</label>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<label class="partition-name-tab" for="tab-2">Pro Sports</label>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<label class="partition-name-tab" for="tab-3">College Sports</label>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<label class="partition-name-tab" for="tab-4">Motorsports</label>
+					</li>
+					<li class="tab-item partition-tab-item">
+						<button class="cart-button">
+							<span class="cart-button-icon"></span>
+						</button>
+					</li>
+				</ul>
+				<ul class="partition-content-list">
+					<li class="partition-content-item">
+						<input class="tab-input" type="radio" name="tabs" id="tab-1" checked>
+						<div class="partition-content sub-content">
+							<div class="partition-content-wrap">
+								<ul class="partition-content-list subcontent-list ">
+									<li class="partition-content-item">
+										<input class="tab-input" type="radio" name="subtabs" id="subtab-1" checked>
+										<div class="partition-content partition1-thumbnail">
 											<div class="container-lg">
 												<div class="partition-info">
 													<p class="partition-date">May 02, 2015</p>
@@ -78,50 +95,74 @@
 											</div>
 										</div>
 									</li>
-									<li class="tab-item partition-subtab-item">
-										<input type="radio" name="subtabs" id="subtab-2">
-										<label class="partition-name-tab" for="subtab-2">Super Bowl 50</label>
-										<div class="partition-content sub-content">
-											Tab22
+									<li class="partition-content-item">
+										<input class="tab-input" type="radio" name="subtabs" id="subtab-2">
+										<div class="partition-content">
+											<div class="container-lg">
+												<div class="partition-info">
+													Tab12
+												</div>
+											</div>
 										</div>
 									</li>
-									<li class="tab-item partition-subtab-item">
-										<input type="radio" name="subtabs" id="subtab-3">
-										<label class="partition-name-tab" for="subtab-3">The Masters</label>
-										<div class="partition-content sub-content">
-											Tab23
+									<li class="partition-content-item">
+										<input class="tab-input" type="radio" name="subtabs" id="subtab-3">
+										<div class="partition-content">
+											<div class="container-lg">
+												<div class="partition-info">
+													Tab13
+												</div>
+											</div>
 										</div>
 									</li>
-									<li class="tab-item partition-subtab-item">
-										<input type="radio" name="subtabs" id="subtab-4">
-										<label class="partition-name-tab" for="subtab-4">The Experience</label>
-										<div class="partition-content sub-content">
-											Tab24
+									<li class="partition-content-item">
+										<input class="tab-input" type="radio" name="subtabs" id="subtab-4">
+										<div class="partition-content">
+											<div class="container-lg">
+												<div class="partition-info">
+													Tab14
+												</div>
+											</div>
 										</div>
 									</li>
 								</ul>
+								<div class="partition-subtab">
+									<div class="container">
+										<ul class="tab-list partition-subtab-list">
+											<li class="tab-item partition-subtab-item">
+												<label class="partition-name-tab active" for="subtab-1">Kentucky Derby</label>
+											</li>
+											<li class="tab-item partition-subtab-item">
+												<label class="partition-name-tab" for="subtab-2">Super Bowl 50</label>
+											</li>
+											<li class="tab-item partition-subtab-item">
+												<label class="partition-name-tab" for="subtab-3">The Masters</label>
+											</li>
+											<li class="tab-item partition-subtab-item">
+												<label class="partition-name-tab" for="subtab-4">The Experience</label>
+											</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</li>
-					<li class="tab-item partition-tab-item">
-						<input type="radio" name="tabs" id="tab-2">
-						<label class="partition-name-tab" for="tab-2">Pro Sports</label>
+					<li class="partition-content-item">
+						<input class="tab-input" type="radio" name="tabs" id="tab-2">
 						<div class="partition-content main-content">
-							Tab2
+							<div class="partition-info">Tab2</div>	
 						</div>
 					</li>
-					<li class="tab-item partition-tab-item">
-						<input type="radio" name="tabs" id="tab-3">
-						<label class="partition-name-tab" for="tab-3">College Sports</label>
+					<li class="partition-content-item">
+						<input class="tab-input" type="radio" name="tabs" id="tab-3">
 						<div class="partition-content main-content">
-							Tab3
+							<div class="partition-info">Tab3</div>	
 						</div>
 					</li>
-					<li class="tab-item partition-tab-item">
-						<input type="radio" name="tabs" id="tab-4">
-						<label class="partition-name-tab" for="tab-4">Motorsports</label>
-						<div class="partition-content">
-							Tab4
+					<li class="partition-content-item">
+						<input class="tab-input" type="radio" name="tabs" id="tab-4">
+						<div class="partition-content main-content">
+							<div class="partition-info">Tab4</div>	
 						</div>
 					</li>
 				</ul>
@@ -135,9 +176,6 @@
 					</div>
 				</div>
 			</div>
-			<button class="cart-button">
-				<span class="cart-button-icon"></span>
-			</button>
 		</section>
 	</div>
 

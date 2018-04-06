@@ -1,3 +1,6 @@
+@import "navigation";
+@import "search";
+@import "user";
 .header-top {
     background: #2d2d2d;
     position: relative;
@@ -10,6 +13,3 @@
       padding: 0 20px;
     }
   }
-@import "navigation";
-@import "search";
-@import "user";

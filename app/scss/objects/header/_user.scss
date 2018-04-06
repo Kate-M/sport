@@ -36,7 +36,7 @@
     }
   }
   .user-count {
-    font-family: $font_SSBL, $font_def;
+    font-family: $font_SSBL;
     @include breakpoint(max-width 600px) {
       display: none;
     }

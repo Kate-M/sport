@@ -1,11 +1,10 @@
+@import "sub-partition";
+@import "partition-content";
 .intro-section {
     color:#2d2d2d;
     position: relative;
   }
-  .partition-tab {
-    margin-right: 96px;
-  }
-    .partition-button {
+  .partition-button {
     display: none;
     font-family: $font_SSBK;
     font-size: 1.44rem;
@@ -30,27 +29,9 @@
   }
   .tab-list {
     display: flex;
-    &::after {
-      content: "";
-      clear: both;
-      display: block;
-      height: 240px;
-    }
     @include breakpoint(max-width 600px) {
       flex-direction: column;
     }
-  }
-   .partition-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    overflow-y: auto;
-    z-index: -1;
-  }
-  .main-content {
-    height: 500px;
-    z-index: 0;
   }
   .tab-item {
     width: 25%;
@@ -58,39 +39,15 @@
     @include breakpoint(max-width 600px) {
       width: 100%;
     }
-    & > input {
-      display: none;
+    &:hover {
+      background: $color_blue_80;
+      color:$color_white;
     }
-    & > .partition-name-tab {
-      @include center-all;
-      letter-spacing: 0.6px;
-      height: 60px;
-      cursor: pointer;
-      user-select: none;
-      border:1px;
-      border-style: solid;
-      @include breakpoint(max-width 600px) {
-        transform: translateX(-200%);
-        background: $color_white;
-      }
-      &:hover {
-        background: $color_blue_80;
-        color:$color_white;
-      }
-      &.open {
-        transform: translateX(0);
-      }
+    &.open {
+      transform: translateX(0);
     }
     &:last-child > .partition-name-tab {
       border-right-width: 1px;
-    }
-    & > input:checked + .partition-name-tab {
-      background-color: $color_main;
-      border-color:$color_main;
-      color:$color_white;
-    }
-    & > input:checked ~ .partition-content {
-      display: block;
     }
   }
   .partition-tab-item{
@@ -102,15 +59,54 @@
         border-color:$color_blue_80;
       }
     }
+    .partition-tab-list &:last-child {
+      width:96px;
+    }
+    @include breakpoint(max-width 600px) {
+      .partition-tab-list &:last-child {
+        width:100%;
+      }
+    }
   }
+    .partition-name-tab {
+      @include center-all;
+      letter-spacing: 0.6px;
+      height: 60px;
+      cursor: pointer;
+      user-select: none;
+      border:1px;
+      border-style: solid;
+    }
+    .partition-name-tab.active {
+      background-color: $color_main;
+      border-color:$color_main;
+      color:$color_white;
+    }
+    input:checked ~ .partition-content {
+      display: block;
+    }
+    .partition-content-list {
+      position: relative;
+    }
+    .partition-content-item {
+      display: flex;
+      height: 100%;
+    }
+     .partition-content {
+      display: none;
+      width: 100%;
+      background-color: $color_black;
+    }
+    .main-content {
+      position: absolute;
+      top:0;
+      left: 0;
+    }
   .cart-button {
     background: #f3f3f3;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 96px;
+    height: 100%;
+    width:100%;
     @include center-all;
-    height: 60px;
     &:hover {
       background: $color_blue;
       .cart-button-icon {
@@ -120,6 +116,8 @@
     }
   }
   .cart-button-icon {
+    height: 100%;
+    width: 100%;
     justify-self: center;
     transition: none;
     display: block;
@@ -127,5 +125,3 @@
     height: 28px;
     @include sprites-ico(-10px, 274px);
   }
-  @import "sub-partition";
-  @import "partition-content";
