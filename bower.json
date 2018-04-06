@@ -1,0 +1,21 @@
+{
+  "name": "sport",
+  "description": "project for developers",
+  "main": "gulpfile.js",
+  "authors": [
+    "AT"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Kate-M/sport",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "slick-slide#^1.8.1"
+  }
+}

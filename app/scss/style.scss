@@ -2,12 +2,13 @@
 @import "susy";
 @import "compass";
 @import "breakpoint";
-@import "../../node_modules/node-reset-scss/scss/reset";
-@import "normalize.scss";
+@import "normalize";
+@import "reset";
+@import "slick";
 
-@import "fonts";
-@import "variable";
-@import "mixin";
-@import "common";
+@import "base/fonts";
+@import "base/variable";
+@import "base/mixin";
+@import "base/common";
 @import "objects/header/header";
 @import "objects/intro/intro-section";

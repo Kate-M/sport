@@ -10,3 +10,5 @@ $('.partition-button').on('click', function () {
 $('.partition-name-tab').on('click', function () {
     $('.partition-name-tab').removeClass('open');
 });
+
+$('.single-item').slick();

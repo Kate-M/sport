@@ -13,6 +13,8 @@ var cache = require('gulp-cache');
 var clean = require('gulp-clean');
 var order = require('gulp-order');
 var sass = require('gulp-sass');
+var filter = require('gulp-filter');
+var mainBowerFiles = require('main-bower-files');
 
 var path_scss = './app/scss';
 var path_css = './dist/css';
@@ -45,13 +47,8 @@ gulp.task('clean', function() {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src(path_app_js + '/**/*.js')
-        .pipe(order([
-            "libs/jquery-1.12.3.min.js",
-            "libs/classie.js",
-            "slick.min.js",
-            "**/*.js"
-        ]))
+    gulp.src(mainBowerFiles().concat([path_app_js + '/**/*']))
+        .pipe(filter("**/*.js"))
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(path_dist_js))
         .pipe(rename('scripts.min.js'))
@@ -64,11 +61,13 @@ gulp.task('sass', function () {
         .pipe(compass({
             config_file: './app/config/config.rb',
             css: path_css,
-            sass: path_scss
+            sass: path_scss,
+            import_path: [ 
+                require('node-reset-scss').includePath,
+                require('node-normalize-scss').includePaths,
+                'bower_components/slick-carousel/slick'                
+            ]
         }))
-        .pipe(sass({
-            includePaths: require('node-reset-scss').includePaths
-        }))  
         .pipe(gulp.dest(path_css))
         .pipe(prefix("last 5 version", "ie 8", "ie 7"))
         .pipe(sourcemaps.write('.'))
