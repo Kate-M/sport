@@ -1,16 +1,21 @@
 
-startTimer();
-function startTimer() {
-    var endTime = new Date('Sep 4, 2018 05:01:50');
-    var createTimer = function () {
-        return setInterval(function () {
-            var currentTime = new Date();
-            var resultTime = new Date(endTime - currentTime);
-            document.getElementsByClassName('count-days')[0].innerHTML = resultTime.getDay();
-            document.getElementsByClassName('count-hrs')[0].innerHTML = resultTime.getHours();
-            document.getElementsByClassName('count-min')[0].innerHTML = resultTime.getMinutes();
-            document.getElementsByClassName('count-sec')[0].innerHTML = resultTime.getSeconds();
-        }, 1000);
+var endTime = new Date("Sep 4, 2018 05:01:50").getTime();
+var timer = setInterval(function () {
+    var currentTime = new Date().getTime();
+    var distance = endTime - currentTime;
+    if (distance < 0) {
+        clearInterval(timer);
+    } else {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementsByClassName('count-days')[0].innerHTML = days;
+        document.getElementsByClassName('count-hrs')[0].innerHTML = hours;
+        document.getElementsByClassName('count-min')[0].innerHTML = minutes;
+        document.getElementsByClassName('count-sec')[0].innerHTML = seconds;
     }
-    timer = createTimer();
-};
+}, 1000);
+
+

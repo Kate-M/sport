@@ -13375,51 +13375,6 @@ return jQuery;
 
 }));
 
-'use strict'
-
-$('.partition-button').on('click', function () {
-    $(this).next().toggleClass('open');
-});
-$('.tab-item').on('click', function () {
-    $(this).parent().removeClass('open');
-});
-$('.navbar-top-button').on('click', function () {
-    $('.page-wrapper').toggleClass('open');
-    $(this).toggleClass('open-menu');
-});
-var labelsTabs = $('label.partition-name-tab').toArray();
-var inputsTabs = $('.tab-input').toArray();
-
-inputsTabs.forEach(function (el) {
-    el.addEventListener("change", changeActiveTab, false);
-})
-
-function changeActiveTab(e) {
-    labelsTabs.forEach(function (el) {
-        if (!el.control.checked) {
-            el.classList.remove('active');
-        }
-    })
-    var labelFor = e.srcElement.attributes["id"].value;
-    e.srcElement.labels[0].classList.add('active');
-}
-
-startTimer();
-function startTimer() {
-    var endTime = new Date('Sep 4, 2018 05:01:50');
-    var createTimer = function () {
-        return setInterval(function () {
-            var currentTime = new Date();
-            var resultTime = new Date(endTime - currentTime);
-            document.getElementsByClassName('count-days')[0].innerHTML = resultTime.getDay();
-            document.getElementsByClassName('count-hrs')[0].innerHTML = resultTime.getHours();
-            document.getElementsByClassName('count-min')[0].innerHTML = resultTime.getMinutes();
-            document.getElementsByClassName('count-sec')[0].innerHTML = resultTime.getSeconds();
-        }, 1000);
-    }
-    timer = createTimer();
-};
-
 
 ( function( window ) {
 
@@ -13488,3 +13443,52 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
+
+$('.partition-button').on('click', function () {
+    $(this).next().toggleClass('open');
+});
+$('.tab-item').on('click', function () {
+    $(this).parent().removeClass('open');
+});
+$('.navbar-top-button').on('click', function () {
+    $('.page-wrapper').toggleClass('open');
+    $(this).toggleClass('open-menu');
+});
+var labelsTabs = $('label.partition-name-tab').toArray();
+var inputsTabs = $('.tab-input').toArray();
+
+inputsTabs.forEach(function (el) {
+    el.addEventListener("change", changeActiveTab, false);
+})
+
+function changeActiveTab(e) {
+    labelsTabs.forEach(function (el) {
+        if (!el.control.checked) {
+            el.classList.remove('active');
+        }
+    })
+    var labelFor = e.srcElement.attributes["id"].value;
+    e.srcElement.labels[0].classList.add('active');
+}
+
+var endTime = new Date("Sep 4, 2018 05:01:50").getTime();
+var timer = setInterval(function () {
+    var currentTime = new Date().getTime();
+    var distance = endTime - currentTime;
+    if (distance < 0) {
+        clearInterval(timer);
+    } else {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementsByClassName('count-days')[0].innerHTML = days;
+        document.getElementsByClassName('count-hrs')[0].innerHTML = hours;
+        document.getElementsByClassName('count-min')[0].innerHTML = minutes;
+        document.getElementsByClassName('count-sec')[0].innerHTML = seconds;
+    }
+}, 1000);
+
+
+
