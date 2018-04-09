@@ -5,6 +5,10 @@
   left:0;
   z-index: 1;
 }
+.partittion-subtad-wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .partition-subtab-list {
     &::after {
       content: '';
@@ -16,6 +20,9 @@
       bottom: 0;
       background: transparentize(#191919, 0.2);
       z-index: -1;
+      @include breakpoint(max-width 600px) {
+        height: 100%;
+      }
     }
   }
 .partition-content-wrap {
@@ -39,7 +46,4 @@
   }
 .subcontent-list {
   height: 100%;
-}
-.partition-info {
-  height: 500px;
 }

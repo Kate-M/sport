@@ -39,10 +39,12 @@
     overflow-x: hidden;
     font-size: 1.4rem;
     letter-spacing: 0.4px;
-    // background: url(../images/temp.jpg) center 0 no-repeat;
+    //background: url(../images/temp.jpg) center 0 no-repeat;
   }
   button {
     cursor: pointer;
+    font-family: inherit;
+    color: inherit;
     appearance: none;
     border: 0;
     padding: 0;
@@ -60,7 +62,7 @@
     transform: translateX(0);
     transition: transform .3s;
     &.open {
-      transform: translateX(300px);
+      transform: translateX(250px);
       transition: transform .3s;
     }
   }
@@ -78,9 +80,10 @@
     }
   }
   .container-lg {
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
     @include breakpoint(min-width 768px) {
+      width: 100%;
       max-width: 720px;
     }
     @include breakpoint(min-width 992px) {

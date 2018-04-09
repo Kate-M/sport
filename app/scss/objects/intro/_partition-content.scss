@@ -17,9 +17,13 @@
     }
 }
 .partition-info {
-    padding-top: 95px;
+    padding: 93px 0 60px;
     color:$color_white;
     font-family: $font_SSL;
+    height: 500px;
+    @include breakpoint(max-width 600px) {
+      padding-top: 40px;
+    }
   }
   .partition-date {
     font-size: 1.4rem;
@@ -28,7 +32,7 @@
     font-family: $font_GCBL;
     font-size:5.8rem;
     text-transform: uppercase;
-    padding: 23px 0;
+    padding: 13px 0;
   }
   .partition-autor {
     font-size: 1.8rem;

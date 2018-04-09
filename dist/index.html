@@ -56,13 +56,13 @@
 		</header>
 		<section class="intro-section">
 			<div class="partition-tab">
-				<button class="partition-button">Partition...</button>
+				<button class="partition-button">Choose partition</button>
 				<ul class="tab-list partition-tab-list">
 					<li class="tab-item partition-tab-item">
-						<label class="partition-name-tab active" for="tab-1">Events &amp; Packages</label>
+						<label class="partition-name-tab" for="tab-1">Events &amp; Packages</label>
 					</li>
 					<li class="tab-item partition-tab-item">
-						<label class="partition-name-tab" for="tab-2">Pro Sports</label>
+						<label class="partition-name-tab active" for="tab-2">Pro Sports</label>
 					</li>
 					<li class="tab-item partition-tab-item">
 						<label class="partition-name-tab" for="tab-3">College Sports</label>
@@ -78,12 +78,20 @@
 				</ul>
 				<ul class="partition-content-list">
 					<li class="partition-content-item">
-						<input class="tab-input" type="radio" name="tabs" id="tab-1" checked>
-						<div class="partition-content sub-content">
+						<input class="tab-input" type="radio" name="mainTabs" id="tab-1">
+						<div class="partition-content main-content">
+							<div class="partition-content-wrap">
+								<div class="partition-info">Tab1</div>
+							</div>
+						</div>
+					</li>
+					<li class="partition-content-item">
+						<input class="tab-input" type="radio" name="mainTabs" id="tab-2" checked>
+						<div class="partition-content main-content">
 							<div class="partition-content-wrap">
 								<ul class="partition-content-list subcontent-list ">
 									<li class="partition-content-item">
-										<input class="tab-input" type="radio" name="subtabs" id="subtab-1" checked>
+										<input class="tab-input" type="radio" name="proSportTabs" id="subtab-1" checked>
 										<div class="partition-content partition1-thumbnail">
 											<div class="container-lg">
 												<div class="partition-info">
@@ -96,7 +104,7 @@
 										</div>
 									</li>
 									<li class="partition-content-item">
-										<input class="tab-input" type="radio" name="subtabs" id="subtab-2">
+										<input class="tab-input" type="radio" name="proSportTabs" id="subtab-2">
 										<div class="partition-content">
 											<div class="container-lg">
 												<div class="partition-info">
@@ -106,7 +114,7 @@
 										</div>
 									</li>
 									<li class="partition-content-item">
-										<input class="tab-input" type="radio" name="subtabs" id="subtab-3">
+										<input class="tab-input" type="radio" name="proSportTabs" id="subtab-3">
 										<div class="partition-content">
 											<div class="container-lg">
 												<div class="partition-info">
@@ -116,7 +124,7 @@
 										</div>
 									</li>
 									<li class="partition-content-item">
-										<input class="tab-input" type="radio" name="subtabs" id="subtab-4">
+										<input class="tab-input" type="radio" name="proSportTabs" id="subtab-4">
 										<div class="partition-content">
 											<div class="container-lg">
 												<div class="partition-info">
@@ -128,51 +136,68 @@
 								</ul>
 								<div class="partition-subtab">
 									<div class="container">
-										<ul class="tab-list partition-subtab-list">
-											<li class="tab-item partition-subtab-item">
-												<label class="partition-name-tab active" for="subtab-1">Kentucky Derby</label>
-											</li>
-											<li class="tab-item partition-subtab-item">
-												<label class="partition-name-tab" for="subtab-2">Super Bowl 50</label>
-											</li>
-											<li class="tab-item partition-subtab-item">
-												<label class="partition-name-tab" for="subtab-3">The Masters</label>
-											</li>
-											<li class="tab-item partition-subtab-item">
-												<label class="partition-name-tab" for="subtab-4">The Experience</label>
-											</li>
-										</ul>
+										<div class="partittion-subtad-wrap">
+											<button class="partition-button sub-button">Choose sport event</button>
+											<ul class="tab-list partition-subtab-list">
+												<li class="tab-item partition-subtab-item">
+													<label class="partition-name-tab active" for="subtab-1">Kentucky Derby</label>
+												</li>
+												<li class="tab-item partition-subtab-item">
+													<label class="partition-name-tab" for="subtab-2">Super Bowl 50</label>
+												</li>
+												<li class="tab-item partition-subtab-item">
+													<label class="partition-name-tab" for="subtab-3">The Masters</label>
+												</li>
+												<li class="tab-item partition-subtab-item">
+													<label class="partition-name-tab" for="subtab-4">The Experience</label>
+												</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li class="partition-content-item">
-						<input class="tab-input" type="radio" name="tabs" id="tab-2">
+						<input class="tab-input" type="radio" name="mainTabs" id="tab-3">
 						<div class="partition-content main-content">
-							<div class="partition-info">Tab2</div>	
+							<div class="partition-content-wrap">
+								<div class="partition-info">Tab3</div>
+							</div>
 						</div>
 					</li>
 					<li class="partition-content-item">
-						<input class="tab-input" type="radio" name="tabs" id="tab-3">
+						<input class="tab-input" type="radio" name="mainTabs" id="tab-4">
 						<div class="partition-content main-content">
-							<div class="partition-info">Tab3</div>	
-						</div>
-					</li>
-					<li class="partition-content-item">
-						<input class="tab-input" type="radio" name="tabs" id="tab-4">
-						<div class="partition-content main-content">
-							<div class="partition-info">Tab4</div>	
+							<div class="partition-content-wrap">
+								<div class="partition-info">Tab4</div>
+							</div>
 						</div>
 					</li>
 				</ul>
 				<div class="common-info">
-					<button class="packages-button">View Packages</button>
-					<div class="time-counter">
-						<span class="count-days">147</span> :
-						<span class="count-hrs">18</span> :
-						<span class="count-min">04</span> :
-						<span class="count-sec">12</span>
+					<div class="container-lg">
+						<div class="common-info-wrap">
+								<button class="packages-button">View Packages</button>
+								<div class="time-counter">
+									<div class="counter-item">
+											<span class="count count-days">147</span>
+											<span class="count-desc">days</span>
+									</div>
+									<div class="counter-item">
+											<span class="count count-hrs">18</span>
+											<span class="count-desc">hrs</span>
+									</div>
+									<div class="counter-item">
+											<span class="count count-min">04</span>
+											<span class="count-desc">min</span>
+									</div>
+									<div class="counter-item">
+											<span class="count count-sec">12</span>
+											<span class="count-desc">sec</span>
+									</div>
+								</div>
+						</div>
 					</div>
 				</div>
 			</div>
