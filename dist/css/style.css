@@ -680,7 +680,6 @@ body {
   overflow-x: hidden;
   font-size: 1.4rem;
   letter-spacing: 0.4px;
-  background: url(../images/temp.jpg) center 0 no-repeat;
 }
 
 button {
@@ -1093,7 +1092,7 @@ img {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 80px;
+  bottom: 90px;
 }
 
 .common-info-wrap {
@@ -1152,7 +1151,7 @@ img {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-right: 12px;
+  margin-left: 12px;
 }
 .counter-item .count {
   display: -webkit-flex;

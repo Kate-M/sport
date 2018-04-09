@@ -2,7 +2,7 @@
     position: absolute;
     width: 100%;
     left:0;
-    bottom: 80px;
+    bottom: 90px;
   }
   .common-info-wrap {
     display: flex;
@@ -36,7 +36,7 @@
     font-size: 1.45rem;
     @include center-all;
     flex-direction: column;
-    margin-right: 12px;
+    margin-left: 12px;
     .count {
       @include center-h;
       font-family: $font_SSSBL;

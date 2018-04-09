@@ -13376,6 +13376,7 @@ return jQuery;
 }));
 
 
+
 ( function( window ) {
 
 'use strict';
@@ -13489,6 +13490,5 @@ var timer = setInterval(function () {
         document.getElementsByClassName('count-sec')[0].innerHTML = seconds;
     }
 }, 1000);
-
 
 
