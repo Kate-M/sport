@@ -631,7 +631,9 @@ table {
 }
 
 * {
-  transition: background .3s, color .3s;
+  transition: background .3s, color .3s, -webkit-filter .3s;
+  transition: background .3s, color .3s, filter .3s;
+  transition: background .3s, color .3s, filter .3s, -webkit-filter .3s;
 }
 
 a {
@@ -731,6 +733,7 @@ img {
 .container {
   width: 100%;
   margin: 0 auto;
+  max-width: 310px;
 }
 @media (min-width: 768px) {
   .container {
@@ -744,12 +747,12 @@ img {
 }
 
 .container-lg {
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
+  max-width: 310px;
 }
 @media (min-width: 768px) {
   .container-lg {
-    width: 100%;
     max-width: 720px;
   }
 }
@@ -762,6 +765,16 @@ img {
   .container-lg {
     max-width: 1140px;
   }
+}
+
+.title {
+  padding: 37px 0;
+}
+
+.title-item {
+  font-family: "StagSans-Bold", sans-serif;
+  font-size: 2rem;
+  color: #3f3f3f;
 }
 
 .header-navigation-panel {
@@ -1392,4 +1405,255 @@ input:checked ~ .partition-content {
   height: 28px;
   background: url(../images/ico-sprites.png);
   background-position: -10px 274px;
+}
+
+.upcoming-events {
+  background: #f6f6f6;
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.event-item {
+  height: 100%;
+}
+
+.event-item-wrap {
+  position: relative;
+  width: 304px;
+  margin: 0 auto;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ffffff;
+  cursor: pointer;
+  height: 100%;
+}
+
+.event-image-wrap {
+  position: relative;
+}
+
+.event-image {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.event-item:hover .event-image {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.event-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.event-activity-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 13px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.activity-buttons {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 3px;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.activity-buttons:hover {
+  border-color: #024b78;
+}
+.activity-buttons:not(:last-child) {
+  margin-right: 6px;
+}
+.event-item:hover .activity-buttons {
+  background: #ffffff;
+}
+.event-item:hover .activity-buttons .button-share,
+.event-item:hover .activity-buttons .button-like {
+  transition: none;
+  background-position-x: 33px;
+}
+.activity-buttons .activity-button-item {
+  display: block;
+  transition: none;
+}
+.activity-buttons .button-share {
+  width: 17px;
+  height: 14px;
+  background: url(../images/ico-sprites.png);
+  background-position: 71px -15px;
+}
+.activity-buttons .button-like {
+  width: 18px;
+  height: 16px;
+  background: url(../images/ico-sprites.png);
+  background-position: 71px -39px;
+}
+
+.event-info-wrap {
+  padding: 15px 13px 0;
+  color: #7f7f7f;
+  font-family: "StagSans-Medium", sans-serif;
+  font-size: 1.2rem;
+}
+
+.event-info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top-info {
+  padding-bottom: 13px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 17px;
+}
+.top-info .mark {
+  text-transform: uppercase;
+  font-family: "StagSans-Bold", sans-serif;
+}
+
+.event-name {
+  font-family: "StagSans-Bold", sans-serif;
+  font-size: 1.7rem;
+  padding-bottom: 55px;
+  color: #3f3f3f;
+}
+.event-item:hover .event-name {
+  color: #024b78;
+}
+
+.bottom-info {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 100%;
+  padding: 0 13px;
+}
+.bottom-info .event-packages-button {
+  text-transform: uppercase;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.bottom-info .event-packages-button:hover {
+  color: #024b78;
+}
+
+.slick-list {
+  margin: 0 -5px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slick-track {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
+
+.slick-arrow,
+.slick-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -50px;
+}
+
+.slick-arrow {
+  width: 10px;
+  height: 15px;
+  transition: none;
+}
+.slick-arrow:hover {
+  transition: none;
+}
+
+.prev-slick-button {
+  right: 100px;
+  padding-right: 10px;
+  background: url(../images/ico-sprites.png);
+  background-position: 285px -553px;
+}
+@media (max-width: 1023px) {
+  .prev-slick-button {
+    right: 125px;
+  }
+}
+.prev-slick-button:hover {
+  background-position-x: 254px;
+}
+
+.next-slick-button {
+  padding-left: 10px;
+  background: url(../images/ico-sprites.png);
+  background-position: 284px -578px;
+}
+.next-slick-button:hover {
+  background-position-x: 253px;
+}
+
+.slick-dots {
+  margin-right: 20px;
+  max-width: 75%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slick-dots-item {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #3f3f3f;
+  margin: 0 7px;
+}
+.slick-dots-item:hover {
+  background: rgba(63, 63, 63, 0.2);
+}
+.slick-active .slick-dots-item {
+  background: #3f3f3f;
 }

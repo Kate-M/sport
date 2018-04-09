@@ -1,6 +1,6 @@
 @include border-box-sizing;
 * {
-    transition: background .3s, color .3s;
+    transition: background .3s, color .3s, filter .3s;
   }
   a {
     color:inherit;
@@ -72,6 +72,7 @@
   .container {
     width: 100%;
     margin: 0 auto;
+    max-width: 310px;
     @include breakpoint(min-width 768px) {
       max-width: 720px;
     }
@@ -80,10 +81,10 @@
     }
   }
   .container-lg {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
+    max-width: 310px;
     @include breakpoint(min-width 768px) {
-      width: 100%;
       max-width: 720px;
     }
     @include breakpoint(min-width 992px) {
@@ -92,4 +93,12 @@
     @include breakpoint(min-width 1200px) {
       max-width: 1140px;
     }
+  }
+  .title {
+    padding: 37px 0;
+  } 
+  .title-item {
+    font-family: $font_SSBL;
+    font-size: 2rem;
+    color:#3f3f3f;
   }

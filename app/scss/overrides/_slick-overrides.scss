@@ -1,0 +1,64 @@
+.slick-list {
+    margin: 0 -5px;
+    display: flex;
+}
+.slick-track {
+    display: flex;
+    align-items: stretch;
+}
+.slick-slide {
+    &>div {
+        height: 100%;
+    }
+}
+.slick-arrow,
+.slick-dots {
+    position: absolute;
+    top:0;
+    right: 0;
+    margin-top: -50px;
+}
+.slick-arrow {
+    width: 10px;
+    height: 15px;
+    transition: none; 
+        &:hover {
+            transition: none;
+        }
+}
+.prev-slick-button {
+    right: 100px;
+    padding-right: 10px;
+    @include breakpoint(max-width 1023px) {
+        right: 125px;
+    }
+    @include sprites-ico(285px, -553px);
+    &:hover {
+        background-position-x: 254px;
+    }
+}
+.next-slick-button {
+    padding-left: 10px;
+    @include sprites-ico(284px, -578px);
+    &:hover {
+        background-position-x: 253px;
+    }
+}
+.slick-dots {
+    margin-right: 20px;
+    max-width: 75%;
+    overflow: hidden;
+    @include center-v;
+}
+.slick-dots-item {
+    width: 10px;
+    height: 10px;
+    border:1px solid #3f3f3f;
+    margin:0 7px;
+    &:hover {
+        background: transparentize(#3f3f3f, .8)
+    }
+    .slick-active & {
+        background: #3f3f3f;
+    }
+}
