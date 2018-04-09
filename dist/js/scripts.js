@@ -13377,17 +13377,16 @@ return jQuery;
 
 'use strict'
 
-$('.navbar-top-button').on('click', function () {
-    $('.page-wrapper').toggleClass('open');
-    $(this).toggleClass('open-menu');
-});
 $('.partition-button').on('click', function () {
     $(this).next().toggleClass('open');
 });
 $('.tab-item').on('click', function () {
     $(this).parent().removeClass('open');
 });
-
+$('.navbar-top-button').on('click', function () {
+    $('.page-wrapper').toggleClass('open');
+    $(this).toggleClass('open-menu');
+});
 var labelsTabs = $('label.partition-name-tab').toArray();
 var inputsTabs = $('.tab-input').toArray();
 
@@ -13404,6 +13403,7 @@ function changeActiveTab(e) {
     var labelFor = e.srcElement.attributes["id"].value;
     e.srcElement.labels[0].classList.add('active');
 }
+
 startTimer();
 function startTimer() {
     var endTime = new Date('Sep 4, 2018 05:01:50');
