@@ -701,6 +701,20 @@ button:focus, button:active {
           appearance: none;
   outline: none;
 }
+button.button-learn {
+  border-radius: 4px;
+  border: 1px solid #024b78;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+  color: #024b78;
+  background: transparent;
+  text-transform: uppercase;
+  font-family: "StagSans-Medium", sans-serif;
+}
+button.button-learn:hover {
+  background: #024b78;
+  color: #ffffff;
+}
 
 img {
   max-width: 100%;
@@ -777,9 +791,6 @@ img {
   }
 }
 
-.title {
-  padding: 37px 0;
-}
 .title h2 {
   font-family: "StagSans-Bold", sans-serif;
   font-size: 2rem;
@@ -1425,6 +1436,9 @@ input:checked ~ .partition-content {
   position: relative;
   padding-bottom: 44px;
 }
+.upcoming-events .title {
+  padding: 37px 0;
+}
 
 .event-item {
   height: 100%;
@@ -1619,7 +1633,7 @@ input:checked ~ .partition-content {
   height: 100%;
 }
 
-.slick-arrow,
+.event-arrow,
 .slick-dots {
   position: absolute;
   top: 0;
@@ -1627,32 +1641,85 @@ input:checked ~ .partition-content {
   margin-top: -50px;
 }
 
-.slick-arrow {
+.event-arrow {
   width: 10px;
   height: 15px;
   transition: none;
 }
-.slick-arrow:hover {
+.event-arrow:hover {
   transition: none;
 }
-
-.prev-slick-button {
+.event-arrow.prev-button {
   right: 0;
   padding-right: 10px;
   background: url(../images/ico-sprites.png);
   background-position: 285px -553px;
 }
-.prev-slick-button:hover {
+.event-arrow.prev-button:hover {
   background-position-x: 254px;
 }
-
-.next-slick-button {
+.event-arrow.next-button {
   padding-left: 10px;
   background: url(../images/ico-sprites.png);
   background-position: 284px -578px;
 }
-.next-slick-button:hover {
+.event-arrow.next-button:hover {
   background-position-x: 253px;
+}
+
+.video-arrow {
+  width: 10px;
+  height: 16px;
+  position: absolute;
+  bottom: 28px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+.video-arrow::before {
+  z-index: 2;
+  width: 10px;
+  height: 16px;
+  content: '';
+  position: absolute;
+  right: 0;
+}
+.video-arrow::after {
+  content: '';
+  position: absolute;
+  height: 72px;
+  width: 68px;
+  background: #024b78;
+}
+.video-arrow:hover.prev-button::before, .video-arrow:hover.next-button::before {
+  background-position-x: 254px;
+}
+.video-arrow:hover::after {
+  transition: background .3s;
+  background: #ffffff;
+}
+.video-arrow.prev-button {
+  left: 24px;
+}
+.video-arrow.prev-button::before {
+  left: 0;
+  background: url(../images/ico-sprites.png);
+  background-position: 285px -603px;
+}
+.video-arrow.next-button {
+  right: 24px;
+}
+.video-arrow.next-button::before {
+  right: 0;
+  background: url(../images/ico-sprites.png);
+  background-position: 285px -629px;
 }
 
 .slick-dots {
@@ -1678,4 +1745,77 @@ input:checked ~ .partition-content {
 }
 .slick-active .slick-dots-item {
   background: #3f3f3f;
+}
+
+.experience {
+  position: relative;
+}
+.experience .background-image {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin-bottom: 10px;
+  background: url(../images/bg-left.jpg), url(../images/bg-right.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: left,right;
+  height: 353px;
+}
+@media (min-width: 1024px) {
+  .experience .background-image {
+    background-size: 50% auto;
+  }
+}
+.experience .background-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.experience .title {
+  padding: 43px 0 15px;
+}
+.experience p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+.experience .experience-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 40px;
+}
+.experience .button-wrap {
+  width: 70%;
+  padding-bottom: 7px;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  text-align: right;
+}
+.experience .video-slider .item {
+  position: relative;
+}
+.experience .video-slider .item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+  background: rgba(2, 75, 120, 0.8);
+}
+.experience .video-slider iframe.video {
+  width: 100%;
+  height: 373px;
+  display: inline-block;
+  vertical-align: bottom;
 }

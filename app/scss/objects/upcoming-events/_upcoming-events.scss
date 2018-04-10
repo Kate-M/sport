@@ -2,6 +2,9 @@
     background: $color_secondary;
     position: relative;
     padding-bottom: 44px;
+    .title {
+        padding: 37px 0;
+    }
 }
 .event-item {
     height: 100%;

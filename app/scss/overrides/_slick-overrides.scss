@@ -11,36 +11,83 @@
         height: 100%;
     }
 }
-.slick-arrow,
+.event-arrow,
 .slick-dots {
     position: absolute;
     top:0;
     right: 0;
     margin-top: -50px;
 }
-.slick-arrow {
+.event-arrow {
     width: 10px;
     height: 15px;
     transition: none; 
+    &:hover {
+        transition: none;
+    }
+    &.prev-button {
+        right: 0;
+        padding-right: 10px;
+        @include sprites-ico(285px, -553px);
         &:hover {
-            transition: none;
+            background-position-x: 254px;
         }
-}
-.prev-slick-button {
-    right: 0;
-    padding-right: 10px;
-    @include sprites-ico(285px, -553px);
-    &:hover {
-        background-position-x: 254px;
     }
+    &.next-button {
+        padding-left: 10px;
+        @include sprites-ico(284px, -578px);
+        &:hover {
+            background-position-x: 253px;
+        }
+    }    
 }
-.next-slick-button {
-    padding-left: 10px;
-    @include sprites-ico(284px, -578px);
-    &:hover {
-        background-position-x: 253px;
+.video-arrow {
+    width: 10px;
+    height: 16px;
+    position: absolute;
+    bottom: 28px;
+    @include center-all;
+    z-index: 1;
+    &::before {
+        z-index: 2;
+        width: 10px;
+        height: 16px;
+        content: '';
+        position: absolute;
+        right:0;
     }
-}
+    &::after {
+        content:'';
+        position: absolute;
+        height: 72px;
+        width:68px;
+        background:$color_main;
+    }
+    &:hover {
+        &.prev-button::before,
+        &.next-button::before {
+            background-position-x: 254px;
+        }    
+        &::after {
+            transition: background .3s;
+            background:$color_white;
+        }
+    } 
+    &.prev-button {
+        left: 24px;
+        &::before {
+            left:0;
+            @include sprites-ico(285px, -603px);
+        }
+    }
+    &.next-button {
+        right: 24px;
+        &::before {
+            right:0;
+            @include sprites-ico(285px, -629px);
+        }
+    }
+}    
 .slick-dots {
     margin-right: 20px;
     max-width: 75%;

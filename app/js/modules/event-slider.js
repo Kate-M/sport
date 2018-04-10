@@ -5,13 +5,12 @@ $(document).ready(function () {
       dots: true,
       slidesToShow: 3,
       slidesToScroll: 3,
-      centerPadding: '40px',
       customPaging: function (slider, i) {
         var thumb = $(slider.$slides[i]).data();
         return '<button class="slick-dots-item"></button>';
       },
-      prevArrow: '<button class="prev-slick-button"></button>',
-      nextArrow: '<button class="next-slick-button"></button>',
+      prevArrow: '<button class="event-arrow prev-button"></button>',
+      nextArrow: '<button class="event-arrow next-button"></button>',
       responsive: [
         {
           breakpoint: 1024,
@@ -38,7 +37,7 @@ $(document).ready(function () {
       var dotsWidth = $('.slick-dots').width();
       var containerButton = $('.slick-dots').parent();
       var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
-      containerButton.find('.prev-slick-button').css('margin-right', marginPrevButton);
+      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
 
     };
     $(window).resize(function () {
