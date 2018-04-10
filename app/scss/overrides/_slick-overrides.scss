@@ -27,11 +27,8 @@
         }
 }
 .prev-slick-button {
-    right: 100px;
+    right: 0;
     padding-right: 10px;
-    @include breakpoint(max-width 1023px) {
-        right: 125px;
-    }
     @include sprites-ico(285px, -553px);
     &:hover {
         background-position-x: 254px;

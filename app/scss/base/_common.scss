@@ -72,9 +72,12 @@
   .container {
     width: 100%;
     margin: 0 auto;
-    max-width: 310px;
+    @include breakpoint(max-width 768px) {
+      padding: 0 20px;
+    }
     @include breakpoint(min-width 768px) {
       max-width: 720px;
+      padding: 0;
     }
     @include breakpoint(min-width 992px) {
       max-width: 938px;
@@ -83,9 +86,12 @@
   .container-lg {
     width: 100%;
     margin: 0 auto;
-    max-width: 310px;
+    @include breakpoint(max-width 768px) {
+      padding: 0 10px;
+    }
     @include breakpoint(min-width 768px) {
       max-width: 720px;
+      padding: 0;
     }
     @include breakpoint(min-width 992px) {
       max-width: 938px;
@@ -96,9 +102,9 @@
   }
   .title {
     padding: 37px 0;
+    h2 {
+      font-family: $font_SSBL;
+      font-size: 2rem;
+      color:#3f3f3f;
+    }
   } 
-  .title-item {
-    font-family: $font_SSBL;
-    font-size: 2rem;
-    color:#3f3f3f;
-  }

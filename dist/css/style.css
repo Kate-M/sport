@@ -733,11 +733,16 @@ img {
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: 310px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+    padding: 0;
   }
 }
 @media (min-width: 992px) {
@@ -749,11 +754,16 @@ img {
 .container-lg {
   width: 100%;
   margin: 0 auto;
-  max-width: 310px;
+}
+@media (max-width: 768px) {
+  .container-lg {
+    padding: 0 10px;
+  }
 }
 @media (min-width: 768px) {
   .container-lg {
     max-width: 720px;
+    padding: 0;
   }
 }
 @media (min-width: 992px) {
@@ -770,8 +780,7 @@ img {
 .title {
   padding: 37px 0;
 }
-
-.title-item {
+.title h2 {
   font-family: "StagSans-Bold", sans-serif;
   font-size: 2rem;
   color: #3f3f3f;
@@ -1367,6 +1376,10 @@ input:checked ~ .partition-content {
   width: 100%;
 }
 
+.tab-input {
+  display: none;
+}
+
 .partition-content {
   display: none;
   width: 100%;
@@ -1419,7 +1432,8 @@ input:checked ~ .partition-content {
 
 .event-item-wrap {
   position: relative;
-  width: 304px;
+  width: 96.5%;
+  max-width: 305px;
   margin: 0 auto;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -1431,18 +1445,38 @@ input:checked ~ .partition-content {
 
 .event-image-wrap {
   position: relative;
+  height: 243px;
 }
-
-.event-image {
+.event-image-wrap .event1 {
+  background: url(../images/upcoming-events/evnt10.jpg);
+}
+.event-image-wrap .event2 {
+  background: url(../images/upcoming-events/evnt20.jpg);
+}
+.event-image-wrap .event3 {
+  background: url(../images/upcoming-events/evnt30.jpg);
+}
+.event-image-wrap .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
-.event-item:hover .event-image {
+.event-item:hover .event-image-wrap .image {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
-
-.event-logo {
+.event-image-wrap .logo1 {
+  background: url(../images/sport-logo/frozen-four-big.png);
+}
+.event-image-wrap .logo2 {
+  background: url(../images/sport-logo/sprint-cup-big.png);
+}
+.event-image-wrap .logo3 {
+  background: url(../images/sport-logo/2016-final-four-big.png);
+}
+.event-image-wrap .logo {
   position: absolute;
   top: 0;
   left: 0;
@@ -1457,9 +1491,10 @@ input:checked ~ .partition-content {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-.event-activity-buttons {
+.event-image-wrap .activity-buttons-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -1468,8 +1503,7 @@ input:checked ~ .partition-content {
   display: -ms-flexbox;
   display: flex;
 }
-
-.activity-buttons {
+.event-image-wrap .activity-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1485,45 +1519,41 @@ input:checked ~ .partition-content {
   border: 1px solid #ffffff;
   background: rgba(255, 255, 255, 0.2);
 }
-.activity-buttons:hover {
-  border-color: #024b78;
-}
-.activity-buttons:not(:last-child) {
-  margin-right: 6px;
-}
-.event-item:hover .activity-buttons {
+.event-image-wrap .activity-buttons:hover {
   background: #ffffff;
 }
-.event-item:hover .activity-buttons .button-share,
-.event-item:hover .activity-buttons .button-like {
+.event-image-wrap .activity-buttons:hover .button-share,
+.event-image-wrap .activity-buttons:hover .button-like {
   transition: none;
   background-position-x: 33px;
 }
-.activity-buttons .activity-button-item {
+.event-image-wrap .activity-buttons:not(:last-child) {
+  margin-right: 6px;
+}
+.event-image-wrap .activity-buttons .button {
   display: block;
   transition: none;
 }
-.activity-buttons .button-share {
+.event-image-wrap .activity-buttons .button-share {
   width: 17px;
   height: 14px;
   background: url(../images/ico-sprites.png);
   background-position: 71px -15px;
 }
-.activity-buttons .button-like {
+.event-image-wrap .activity-buttons .button-like {
   width: 18px;
   height: 16px;
   background: url(../images/ico-sprites.png);
   background-position: 71px -39px;
 }
 
-.event-info-wrap {
+.event-info {
   padding: 15px 13px 0;
   color: #7f7f7f;
   font-family: "StagSans-Medium", sans-serif;
   font-size: 1.2rem;
 }
-
-.event-info {
+.event-info .info {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1531,35 +1561,23 @@ input:checked ~ .partition-content {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
-.top-info {
+.event-info .top-info {
   padding-bottom: 13px;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 17px;
 }
-.top-info .mark {
+.event-info .top-info .mark {
   text-transform: uppercase;
   font-family: "StagSans-Bold", sans-serif;
 }
-
-.event-name {
-  font-family: "StagSans-Bold", sans-serif;
-  font-size: 1.7rem;
-  padding-bottom: 55px;
-  color: #3f3f3f;
-}
-.event-item:hover .event-name {
-  color: #024b78;
-}
-
-.bottom-info {
+.event-info .bottom-info {
   position: absolute;
   bottom: 25px;
   left: 0;
   width: 100%;
   padding: 0 13px;
 }
-.bottom-info .event-packages-button {
+.event-info .bottom-info .event-packages-button {
   text-transform: uppercase;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1568,7 +1586,16 @@ input:checked ~ .partition-content {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.bottom-info .event-packages-button:hover {
+.event-info .bottom-info .event-packages-button:hover {
+  color: #024b78;
+}
+.event-info .name {
+  font-family: "StagSans-Bold", sans-serif;
+  font-size: 1.7rem;
+  padding-bottom: 55px;
+  color: #3f3f3f;
+}
+.event-item:hover .event-info .name {
   color: #024b78;
 }
 
@@ -1610,15 +1637,10 @@ input:checked ~ .partition-content {
 }
 
 .prev-slick-button {
-  right: 100px;
+  right: 0;
   padding-right: 10px;
   background: url(../images/ico-sprites.png);
   background-position: 285px -553px;
-}
-@media (max-width: 1023px) {
-  .prev-slick-button {
-    right: 125px;
-  }
 }
 .prev-slick-button:hover {
   background-position-x: 254px;
