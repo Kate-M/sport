@@ -1,30 +1,28 @@
 $(document).ready(function () {
-    (function () {
-      $('.video-slider').slick({
-        infinite: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: '<button class="video-arrow prev-button"></button>',
-        nextArrow: '<button class="video-arrow next-button"></button>',
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              dots: false
-            }
+  (function () {
+    $('.video-slider').slick({
+      infinite: false,
+      dots: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: '<button class="video-arrow prev-button"></button>',
+      nextArrow: '<button class="video-arrow next-button"></button>',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: false
           }
-        ]
-      });
+        }
+      ]
+    });
 
-      $('.video-slider').on('beforeChange', function (event, slick, prev, current) {
-        console.log('before...');
-      });
+    $('.video-slider').on('beforeChange', function (slick, currentSlide, nextSlide) {
+      pauseVideo();
+    });
 
-      $('.video-slider').on('afterChange', function (event, slick, current) {
-        console.log('after...');
-         findPlayer();
-      });
-    })();
-  });
-  
+    $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
+      findPlayer(currentSlide);
+    });
+  })();
+});

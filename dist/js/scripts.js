@@ -13493,35 +13493,34 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    (function () {
-      $('.video-slider').slick({
-        infinite: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: '<button class="video-arrow prev-button"></button>',
-        nextArrow: '<button class="video-arrow next-button"></button>',
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              dots: false
-            }
+  (function () {
+    $('.video-slider').slick({
+      infinite: false,
+      dots: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: '<button class="video-arrow prev-button"></button>',
+      nextArrow: '<button class="video-arrow next-button"></button>',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: false
           }
-        ]
-      });
+        }
+      ]
+    });
 
-      $('.video-slider').on('beforeChange', function (event, slick, prev, current) {
-        console.log('before...');
-      });
+    $('.video-slider').on('beforeChange', function (slick, currentSlide, nextSlide) {
+      pauseVideo();
+    });
 
-      $('.video-slider').on('afterChange', function (event, slick, current) {
-        console.log('after...');
-         findPlayer();
-      });
-    })();
-  });
-  
+    $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
+      findPlayer(currentSlide);
+    });
+  })();
+});
+
 $('.partition-button').on('click', function () {
     $(this).next().toggleClass('open');
 });
@@ -13570,35 +13569,41 @@ var timer = setInterval(function () {
 
 
 
-  var player;
+var player;
+var playersList = {};
 
-  function createPlayer(videoID) {
-    return new YT.Player(videoID, {
-      videoId: videoID,
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  };
-  
-  function findPlayer() {
-    document.querySelectorAll('.video-slider .slick-active .video').forEach(
-      function (el) {
-        h = createPlayer(el.getAttribute('id'));
-      }
-    );
-  }
-  function onYouTubeIframeAPIReady() {
-    findPlayer();  
-  }
-  
-  function onPlayerReady(event) {
-    event.target.setVolume(30);
-    event.target.stopVideo();
-  }
-  function playVideo() {
-    player.playVideo();
-  };
-  function pauseVideo() {
-    player.pauseVideo();
-  };
+function findPlayer(slide) {
+  var newPlayer = playersList[slide];
+  player = newPlayer || createPlayerFromHtml();
+  playersList[slide] = player;
+  return playersList;
+}
+
+function createPlayerFromHtml() {
+  var idActiveSlide = document.querySelectorAll('.video-slider .slick-active .video')[0].getAttribute('id')
+  return createPlayer(idActiveSlide)
+}
+
+function createPlayer(videoID) {
+  return new YT.Player(videoID, {
+    videoId: videoID,
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+};
+
+function onYouTubeIframeAPIReady() {
+  findPlayer('0');
+}
+
+function onPlayerReady(event) {
+  event.target.setVolume(30);
+  event.target.stopVideo();
+}
+function playVideo() {
+  player.playVideo();
+};
+function pauseVideo() {
+  player.pauseVideo();
+};
