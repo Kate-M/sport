@@ -1,5 +1,4 @@
 .slick-list {
-    margin: 0 -5px;
     display: flex;
 }
 .slick-track {
@@ -9,6 +8,12 @@
 .slick-slide {
     &>div {
         height: 100%;
+    }
+}
+.upcoming-events {
+    .slick-list {
+        margin: 0 -5px;
+        display: flex;
     }
 }
 .event-arrow,
@@ -41,6 +46,12 @@
         }
     }    
 }
+.video-slider {
+    height: 100%;
+    &>div {
+        height: 100%;
+    }
+} 
 .video-arrow {
     width: 10px;
     height: 16px;
@@ -74,14 +85,14 @@
         }
     } 
     &.prev-button {
-        left: 24px;
+        left: 29px;
         &::before {
             left:0;
             @include sprites-ico(285px, -603px);
         }
     }
     &.next-button {
-        right: 24px;
+        right: 29px;
         &::before {
             right:0;
             @include sprites-ico(285px, -629px);

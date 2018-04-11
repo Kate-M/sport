@@ -1,7 +1,7 @@
 $(document).ready(function () {
     (function () {
       $('.video-slider').slick({
-        infinite: true,
+        infinite: false,
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -15,6 +15,15 @@ $(document).ready(function () {
             }
           }
         ]
+      });
+
+      $('.video-slider').on('beforeChange', function (event, slick, prev, current) {
+        console.log('before...');
+      });
+
+      $('.video-slider').on('afterChange', function (event, slick, current) {
+        console.log('after...');
+         findPlayer();
       });
     })();
   });

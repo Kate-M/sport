@@ -1614,7 +1614,6 @@ input:checked ~ .partition-content {
 }
 
 .slick-list {
-  margin: 0 -5px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1631,6 +1630,13 @@ input:checked ~ .partition-content {
 
 .slick-slide > div {
   height: 100%;
+}
+
+.upcoming-events .slick-list {
+  margin: 0 -5px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .event-arrow,
@@ -1665,6 +1671,13 @@ input:checked ~ .partition-content {
 }
 .event-arrow.next-button:hover {
   background-position-x: 253px;
+}
+
+.video-slider {
+  height: 100%;
+}
+.video-slider > div {
+  height: 100%;
 }
 
 .video-arrow {
@@ -1706,7 +1719,7 @@ input:checked ~ .partition-content {
   background: #ffffff;
 }
 .video-arrow.prev-button {
-  left: 24px;
+  left: 29px;
 }
 .video-arrow.prev-button::before {
   left: 0;
@@ -1714,7 +1727,7 @@ input:checked ~ .partition-content {
   background-position: 285px -603px;
 }
 .video-arrow.next-button {
-  right: 24px;
+  right: 29px;
 }
 .video-arrow.next-button::before {
   right: 0;
@@ -1801,10 +1814,13 @@ input:checked ~ .partition-content {
           align-self: flex-end;
   text-align: right;
 }
-.experience .video-slider .item {
+.experience .video-slider {
+  width: 100%;
+  height: 373px;
+  background: #000000;
   position: relative;
 }
-.experience .video-slider .item::after {
+.experience .video-slider::after {
   content: '';
   position: absolute;
   left: 0;
@@ -1813,9 +1829,12 @@ input:checked ~ .partition-content {
   height: 72px;
   background: rgba(2, 75, 120, 0.8);
 }
+.experience .video-slider .item {
+  height: 100%;
+}
 .experience .video-slider iframe.video {
   width: 100%;
-  height: 373px;
+  height: 100%;
   display: inline-block;
   vertical-align: bottom;
 }

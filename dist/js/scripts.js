@@ -13375,123 +13375,6 @@ return jQuery;
 
 }));
 
-$(document).ready(function () {
-  (function () {
-    $('.events-slider').slick({
-      infinite: true,
-      dots: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      customPaging: function (slider, i) {
-        var thumb = $(slider.$slides[i]).data();
-        return '<button class="slick-dots-item"></button>';
-      },
-      prevArrow: '<button class="event-arrow prev-button"></button>',
-      nextArrow: '<button class="event-arrow next-button"></button>',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: false
-          }
-        }
-      ]
-    });
-  })();
-  (function () {
-    setMarginPrevButton();
-    function setMarginPrevButton() {
-      var dotsWidth = $('.slick-dots').width();
-      var containerButton = $('.slick-dots').parent();
-      var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
-      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
-
-    };
-    $(window).resize(function () {
-      setMarginPrevButton();
-    });
-  })();
-});
-
-$(document).ready(function () {
-    (function () {
-      $('.video-slider').slick({
-        infinite: true,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: '<button class="video-arrow prev-button"></button>',
-        nextArrow: '<button class="video-arrow next-button"></button>',
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              dots: false
-            }
-          }
-        ]
-      });
-    })();
-  });
-  
-$('.partition-button').on('click', function () {
-    $(this).next().toggleClass('open');
-});
-$('.tab-item').on('click', function () {
-    $(this).parent().removeClass('open');
-});
-$('.navbar-top-button').on('click', function () {
-    $('.page-wrapper').toggleClass('open');
-    $(this).toggleClass('open-menu');
-});
-var labelsTabs = $('label.partition-name-tab').toArray();
-var inputsTabs = $('.tab-input').toArray();
-
-inputsTabs.forEach(function (el) {
-    el.addEventListener("change", changeActiveTab, false);
-})
-
-function changeActiveTab(e) {
-    labelsTabs.forEach(function (el) {
-        if (!el.control.checked) {
-            el.classList.remove('active');
-        }
-    })
-    var labelFor = e.srcElement.attributes["id"].value;
-    e.srcElement.labels[0].classList.add('active');
-}
-
-var endTime = new Date("Sep 4, 2018 05:01:50").getTime();
-var timer = setInterval(function () {
-    var currentTime = new Date().getTime();
-    var distance = endTime - currentTime;
-    if (distance < 0) {
-        clearInterval(timer);
-    } else {
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementsByClassName('count-days')[0].innerHTML = days;
-        document.getElementsByClassName('count-hrs')[0].innerHTML = hours;
-        document.getElementsByClassName('count-min')[0].innerHTML = minutes;
-        document.getElementsByClassName('count-sec')[0].innerHTML = seconds;
-    }
-}, 1000);
-
-
-
 
 ( function( window ) {
 
@@ -13561,3 +13444,161 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
+$(document).ready(function () {
+  (function () {
+    $('.events-slider').slick({
+      infinite: true,
+      dots: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      customPaging: function (slider, i) {
+        var thumb = $(slider.$slides[i]).data();
+        return '<button class="slick-dots-item"></button>';
+      },
+      prevArrow: '<button class="event-arrow prev-button"></button>',
+      nextArrow: '<button class="event-arrow next-button"></button>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false
+          }
+        }
+      ]
+    });
+  })();
+  (function () {
+    setMarginPrevButton();
+    function setMarginPrevButton() {
+      var dotsWidth = $('.slick-dots').width();
+      var containerButton = $('.slick-dots').parent();
+      var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
+      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
+
+    };
+    $(window).resize(function () {
+      setMarginPrevButton();
+    });
+  })();
+});
+
+$(document).ready(function () {
+    (function () {
+      $('.video-slider').slick({
+        infinite: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button class="video-arrow prev-button"></button>',
+        nextArrow: '<button class="video-arrow next-button"></button>',
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              dots: false
+            }
+          }
+        ]
+      });
+
+      $('.video-slider').on('beforeChange', function (event, slick, prev, current) {
+        console.log('before...');
+      });
+
+      $('.video-slider').on('afterChange', function (event, slick, current) {
+        console.log('after...');
+         findPlayer();
+      });
+    })();
+  });
+  
+$('.partition-button').on('click', function () {
+    $(this).next().toggleClass('open');
+});
+$('.tab-item').on('click', function () {
+    $(this).parent().removeClass('open');
+});
+$('.navbar-top-button').on('click', function () {
+    $('.page-wrapper').toggleClass('open');
+    $(this).toggleClass('open-menu');
+});
+var labelsTabs = $('label.partition-name-tab').toArray();
+var inputsTabs = $('.tab-input').toArray();
+
+inputsTabs.forEach(function (el) {
+    el.addEventListener("change", changeActiveTab, false);
+})
+
+function changeActiveTab(e) {
+    labelsTabs.forEach(function (el) {
+        if (!el.control.checked) {
+            el.classList.remove('active');
+        }
+    })
+    var labelFor = e.srcElement.attributes["id"].value;
+    e.srcElement.labels[0].classList.add('active');
+}
+
+var endTime = new Date("Sep 4, 2018 05:01:50").getTime();
+var timer = setInterval(function () {
+    var currentTime = new Date().getTime();
+    var distance = endTime - currentTime;
+    if (distance < 0) {
+        clearInterval(timer);
+    } else {
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementsByClassName('count-days')[0].innerHTML = days;
+        document.getElementsByClassName('count-hrs')[0].innerHTML = hours;
+        document.getElementsByClassName('count-min')[0].innerHTML = minutes;
+        document.getElementsByClassName('count-sec')[0].innerHTML = seconds;
+    }
+}, 1000);
+
+
+
+  var player;
+
+  function createPlayer(videoID) {
+    return new YT.Player(videoID, {
+      videoId: videoID,
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  };
+  
+  function findPlayer() {
+    document.querySelectorAll('.video-slider .slick-active .video').forEach(
+      function (el) {
+        h = createPlayer(el.getAttribute('id'));
+      }
+    );
+  }
+  function onYouTubeIframeAPIReady() {
+    findPlayer();  
+  }
+  
+  function onPlayerReady(event) {
+    event.target.setVolume(30);
+    event.target.stopVideo();
+  }
+  function playVideo() {
+    player.playVideo();
+  };
+  function pauseVideo() {
+    player.pauseVideo();
+  };
