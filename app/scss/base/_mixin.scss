@@ -15,3 +15,29 @@
     background: url(../images/ico-sprites.png);
     background-position: $x $y;
   }
+  @mixin adaptiveWidth {
+    @include breakpoint(min-width 768px) {
+        width:calc(720px / 1.05);
+      }
+      @include breakpoint(min-width 992px) {
+        width:calc(938px / 1.05);
+      }
+}
+@mixin marginForArrow($side){
+  @if  $side == 'left' {
+    @include breakpoint(min-width 768px) {
+      margin-left:calc((-720px / 2) + 5px);
+    }
+    @include breakpoint(min-width 992px) {
+      margin-left:calc((-938px / 2) + 5px);
+    }
+  }
+  @if  $side == 'right'{
+    @include breakpoint(min-width 768px) {
+      margin-right:calc((-720px / 2) + 5px);
+    }
+    @include breakpoint(min-width 992px) {
+      margin-right:calc((-938px / 2) + 5px);
+    }
+  }
+}

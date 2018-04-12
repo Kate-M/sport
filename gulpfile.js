@@ -12,9 +12,6 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var clean = require('gulp-clean');
 var order = require('gulp-order');
-var sass = require('gulp-sass');
-var filter = require('gulp-filter');
-var mainBowerFiles = require('main-bower-files');
 
 var path_scss = './app/scss';
 var path_css = './dist/css';
@@ -47,8 +44,11 @@ gulp.task('clean', function() {
 });
 
 gulp.task('scripts', function () {
-    gulp.src(mainBowerFiles().concat([path_app_js + '/**/*']))
-        .pipe(filter("**/*.js"))
+    gulp.src([
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/slick-carousel/slick/slick.js',
+        'app/**/*.js'
+    ])
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(path_dist_js))
         .pipe(rename('scripts.min.js'))
@@ -63,12 +63,11 @@ gulp.task('sass', function () {
             css: path_css,
             sass: path_scss,
             import_path: [ 
-                require('node-reset-scss').includePath,
-                require('node-normalize-scss').includePaths,
-                'bower_components/slick-carousel/slick'                
+            require('node-reset-scss').includePath,
+            require('node-normalize-scss').includePaths,
+            'node_modules/slick-carousel/slick'                
             ]
         }))
-        .pipe(gulp.dest(path_css))
         .pipe(prefix("last 5 version", "ie 8", "ie 7"))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path_css))
@@ -81,7 +80,6 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(path_css));
 });
 
-
 gulp.task('sass:watch', function () {
     gulp.watch(path_scss + '/**/*.scss', ['sass']);
     gulp.watch(path_app_js + '/**/*.js', ['lint', 'scripts']);
@@ -90,4 +88,4 @@ gulp.task('sass:watch', function () {
 
 gulp.task('default', ['clean','sass:watch'], function() {
     gulp.start('sass', 'scripts', 'images');
-});
+}); 

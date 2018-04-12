@@ -1,20 +1,33 @@
+.upcoming-events {
+    .slick-list {
+        margin: 0 -5px;
+    }
+    .slick-slide {
+        flex: 0 0 auto;
+        
+    } 
+}
+.slick-slide {
+    flex: 0 0 auto;
+} 
+
 .slick-list {
     display: flex;
 }
 .slick-track {
     display: flex;
-    align-items: stretch;
 }
 .slick-slide {
+    height: auto;
     &>div {
         height: 100%;
     }
 }
-.upcoming-events {
-    .slick-list {
-        margin: 0 -5px;
-        display: flex;
-    }
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    transform: translate3d(0, 0, 0);
+    will-change: all;
 }
 .event-arrow,
 .slick-dots {
@@ -46,12 +59,52 @@
         }
     }    
 }
-.video-slider {
-    height: 100%;
-    &>div {
-        height: 100%;
-    }
-} 
+.experience {
+    .video-slider {
+        &>div {
+            height: 100%;
+        }
+        .slick-list {
+            overflow:visible;
+            align-items: center;
+        }
+        .slick-slide {
+            width: 938px;
+            height: 373px;
+        }
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+        .slick-center {
+            animation: size .3s ease-out both;
+            @include breakpoint(max-width 768px) {
+                width: 100%;
+            }
+              .item {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                animation: show .3s ease-out both;
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    content:'';
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    height: calc(99% - 65px);
+                    margin-top: 35px;
+                    z-index: -1;
+                    box-shadow: 0 0px 15px 20px transparentize($color_black, .6);
+                }
+            }
+    } 
+}
+}
 .video-arrow {
     width: 10px;
     height: 16px;
@@ -85,14 +138,16 @@
         }
     } 
     &.prev-button {
-        left: 29px;
+        left: 50%;
+        @include marginForArrow('left');
         &::before {
             left:0;
             @include sprites-ico(285px, -603px);
         }
     }
     &.next-button {
-        right: 29px;
+        right: 50%;
+       @include marginForArrow('right');
         &::before {
             right:0;
             @include sprites-ico(285px, -629px);

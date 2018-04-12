@@ -10367,11 +10367,11 @@ return jQuery;
      _ _      _       _
  ___| (_) ___| | __  (_)___
 / __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
+\__ \ | | (__|   < _ | \__ \reryter
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.0
+ Version: 1.8.1
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -13375,6 +13375,44 @@ return jQuery;
 
 }));
 
+var player;
+var playersList = {};
+
+function findPlayer(slide) {
+  var newPlayer = playersList[slide];
+  player = newPlayer || createPlayerFromHtml();
+  playersList[slide] = player;
+  return playersList;
+}
+
+function createPlayerFromHtml() {
+  var idActiveSlide = document.querySelectorAll('.video-slider .slick-active .video')[0].getAttribute('id')
+  return createPlayer(idActiveSlide)
+}
+
+function createPlayer(videoID) {
+  return new YT.Player(videoID, {
+    videoId: videoID,
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+};
+
+function onYouTubeIframeAPIReady() {
+  findPlayer('0');
+}
+
+function onPlayerReady(event) {
+  event.target.setVolume(30);
+  event.target.stopVideo();
+}
+function playVideo() {
+  player.playVideo();
+};
+function pauseVideo() {
+  player.pauseVideo();
+};
 
 ( function( window ) {
 
@@ -13447,7 +13485,7 @@ if ( typeof define === 'function' && define.amd ) {
 $(document).ready(function () {
   (function () {
     $('.events-slider').slick({
-      infinite: true,
+      //infinite: true,
       dots: true,
       slidesToShow: 3,
       slidesToScroll: 3,
@@ -13495,28 +13533,36 @@ $(document).ready(function () {
 $(document).ready(function () {
   (function () {
     $('.video-slider').slick({
-      infinite: false,
+      infinite: true,
+      centerMode: true,
       dots: false,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
+      speed: 1000,
+      variableWidth: true,
       prevArrow: '<button class="video-arrow prev-button"></button>',
       nextArrow: '<button class="video-arrow next-button"></button>',
       responsive: [
         {
           breakpoint: 768,
           settings: {
-            dots: false
           }
         }
       ]
     });
 
-    $('.video-slider').on('beforeChange', function (slick, currentSlide, nextSlide) {
+    $('.video-slider').on('beforeChange', function (event,slick, currentSlide, nextSlide) {
       pauseVideo();
     });
 
     $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
-      findPlayer(currentSlide);
+      var nexSlide = currentSlide + 1;
+      var activeSlide = document.querySelectorAll('.video-slider .slick-active .item')[0].children[0].getAttribute('class');
+      if(activeSlide === 'video') {
+        if(nexSlide <= slick.slideCount && nexSlide >= 0 ) {
+          findPlayer(currentSlide);
+        }
+      }
     });
   })();
 });
@@ -13568,42 +13614,3 @@ var timer = setInterval(function () {
 }, 1000);
 
 
-
-var player;
-var playersList = {};
-
-function findPlayer(slide) {
-  var newPlayer = playersList[slide];
-  player = newPlayer || createPlayerFromHtml();
-  playersList[slide] = player;
-  return playersList;
-}
-
-function createPlayerFromHtml() {
-  var idActiveSlide = document.querySelectorAll('.video-slider .slick-active .video')[0].getAttribute('id')
-  return createPlayer(idActiveSlide)
-}
-
-function createPlayer(videoID) {
-  return new YT.Player(videoID, {
-    videoId: videoID,
-    events: {
-      'onReady': onPlayerReady
-    }
-  });
-};
-
-function onYouTubeIframeAPIReady() {
-  findPlayer('0');
-}
-
-function onPlayerReady(event) {
-  event.target.setVolume(30);
-  event.target.stopVideo();
-}
-function playVideo() {
-  player.playVideo();
-};
-function pauseVideo() {
-  player.pauseVideo();
-};

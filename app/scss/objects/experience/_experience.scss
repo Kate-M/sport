@@ -1,32 +1,5 @@
 .experience {
     position: relative;
-    .background-image {
-        width: 100%;
-        position: absolute;
-        bottom:0;
-        left: 0;
-        z-index: -1;
-        margin-bottom: 10px;
-        background: url(../images/bg-left.jpg),
-        url(../images/bg-right.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-y: center;
-        background-position-x: left,right;
-        height: 353px;
-        @include breakpoint(min-width 1024px) {
-            background-size: 50% auto;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width:100%;
-            height: 100%;
-            background:transparentize($color_black,0.6);
-
-        }
-    }
     .title {
         padding: 43px 0 15px;
     }
@@ -47,26 +20,81 @@
     }
     .video-slider {
         width: 100%;
-        height: 373px;
-        background: $color_black;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        height: 394px;
         position: relative;
             &::after {
+                @include adaptiveWidth();
                 content: '';
                 position: absolute;
-                left: 0;
+                left: 50%;
                 bottom: 0;
-                width: 100%;
-                height:72px;
-                background: transparentize($color_main, .2)
+                height: 72px;
+                margin: 0 auto;
+                background:transparentize($color_main, .2);
+                @include breakpoint(min-width 768px) {
+                    margin-left: calc((-720px / 1.05) / 2)
+                }
+                @include breakpoint(min-width 992px) {
+                    margin-left: calc((-938px / 1.05) / 2);
+                }
             }
-        .item {
-            height: 100%;
-        }
-        iframe.video {
+            .item {
+                background-color:$color_black;
+                height: 100%;;
+                &::before {
+                    content:'';
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    margin-left: 9%;
+                    background: transparentize($color_black, .925);
+                }
+            }
+            .image {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .image1 {
+                background-image: url(../images/image.jpg);
+                
+            }
+        .video {
             width: 100%;
             height: 100%;
             display: inline-block;
             vertical-align: bottom;
         }
+     }
+ }
+ @keyframes size {
+    from {
+        @include breakpoint(min-width 768px) {
+            width:720px;
+        }
+        @include breakpoint(min-width 992px) {
+            width:938px;
+        }
     }
+    to {
+            @include adaptiveWidth();
+       
+    }
+} 
+@keyframes show {
+from {
+    transform: scale(1);
+    opacity: .5;
+}
+to {
+    opacity: 1;
+    transform: scale(1.05);
+}
 }
