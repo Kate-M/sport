@@ -1361,6 +1361,10 @@ img {
           user-select: none;
   border: 1px;
   border-style: solid;
+  transition: none;
+}
+.partition-name-tab:hover {
+  transition: none;
 }
 
 .partition-name-tab.active {
@@ -1441,12 +1445,10 @@ input:checked ~ .partition-content {
 .upcoming-events .title {
   padding: 37px 0;
 }
-
-.event-item {
+.upcoming-events .event-item {
   height: 100%;
 }
-
-.event-item-wrap {
+.upcoming-events .event-item-wrap {
   position: relative;
   width: 96.5%;
   max-width: 305px;
@@ -1458,41 +1460,40 @@ input:checked ~ .partition-content {
   cursor: pointer;
   height: 100%;
 }
-
-.event-image-wrap {
+.upcoming-events .event-image-wrap {
   position: relative;
   height: 243px;
 }
-.event-image-wrap .event1 {
+.upcoming-events .event-image-wrap .event1 {
   background: url(../images/upcoming-events/evnt10.jpg);
 }
-.event-image-wrap .event2 {
+.upcoming-events .event-image-wrap .event2 {
   background: url(../images/upcoming-events/evnt20.jpg);
 }
-.event-image-wrap .event3 {
+.upcoming-events .event-image-wrap .event3 {
   background: url(../images/upcoming-events/evnt30.jpg);
 }
-.event-image-wrap .image {
+.upcoming-events .event-image-wrap .image {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
-.event-item:hover .event-image-wrap .image {
+.event-item:hover .upcoming-events .event-image-wrap .image {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
-.event-image-wrap .logo1 {
+.upcoming-events .event-image-wrap .logo1 {
   background: url(../images/sport-logo/frozen-four-big.png);
 }
-.event-image-wrap .logo2 {
+.upcoming-events .event-image-wrap .logo2 {
   background: url(../images/sport-logo/sprint-cup-big.png);
 }
-.event-image-wrap .logo3 {
+.upcoming-events .event-image-wrap .logo3 {
   background: url(../images/sport-logo/2016-final-four-big.png);
 }
-.event-image-wrap .logo {
+.upcoming-events .event-image-wrap .logo {
   position: absolute;
   top: 0;
   left: 0;
@@ -1510,7 +1511,7 @@ input:checked ~ .partition-content {
   background-position: center;
   background-repeat: no-repeat;
 }
-.event-image-wrap .activity-buttons-wrap {
+.upcoming-events .event-image-wrap .activity-buttons-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -1519,7 +1520,7 @@ input:checked ~ .partition-content {
   display: -ms-flexbox;
   display: flex;
 }
-.event-image-wrap .activity-buttons {
+.upcoming-events .event-image-wrap .activity-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1535,41 +1536,40 @@ input:checked ~ .partition-content {
   border: 1px solid #ffffff;
   background: rgba(255, 255, 255, 0.2);
 }
-.event-image-wrap .activity-buttons:hover {
+.upcoming-events .event-image-wrap .activity-buttons:hover {
   background: #ffffff;
 }
-.event-image-wrap .activity-buttons:hover .button-share,
-.event-image-wrap .activity-buttons:hover .button-like {
+.upcoming-events .event-image-wrap .activity-buttons:hover .button-share,
+.upcoming-events .event-image-wrap .activity-buttons:hover .button-like {
   transition: none;
   background-position-x: 33px;
 }
-.event-image-wrap .activity-buttons:not(:last-child) {
+.upcoming-events .event-image-wrap .activity-buttons:not(:last-child) {
   margin-right: 6px;
 }
-.event-image-wrap .activity-buttons .button {
+.upcoming-events .event-image-wrap .activity-buttons .button {
   display: block;
   transition: none;
 }
-.event-image-wrap .activity-buttons .button-share {
+.upcoming-events .event-image-wrap .activity-buttons .button-share {
   width: 17px;
   height: 14px;
   background: url(../images/ico-sprites.png);
   background-position: 71px -15px;
 }
-.event-image-wrap .activity-buttons .button-like {
+.upcoming-events .event-image-wrap .activity-buttons .button-like {
   width: 18px;
   height: 16px;
   background: url(../images/ico-sprites.png);
   background-position: 71px -39px;
 }
-
-.event-info {
+.upcoming-events .event-info {
   padding: 15px 13px 0;
   color: #7f7f7f;
   font-family: "StagSans-Medium", sans-serif;
   font-size: 1.2rem;
 }
-.event-info .info {
+.upcoming-events .event-info .info {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1577,23 +1577,23 @@ input:checked ~ .partition-content {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.event-info .top-info {
+.upcoming-events .event-info .top-info {
   padding-bottom: 13px;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 17px;
 }
-.event-info .top-info .mark {
+.upcoming-events .event-info .top-info .mark {
   text-transform: uppercase;
   font-family: "StagSans-Bold", sans-serif;
 }
-.event-info .bottom-info {
+.upcoming-events .event-info .bottom-info {
   position: absolute;
   bottom: 25px;
   left: 0;
   width: 100%;
   padding: 0 13px;
 }
-.event-info .bottom-info .event-packages-button {
+.upcoming-events .event-info .bottom-info .event-packages-button {
   text-transform: uppercase;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1602,23 +1602,23 @@ input:checked ~ .partition-content {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.event-info .bottom-info .event-packages-button:hover {
+.upcoming-events .event-info .bottom-info .event-packages-button:hover {
   color: #024b78;
 }
-.event-info .name {
+.upcoming-events .event-info .name {
   font-family: "StagSans-Bold", sans-serif;
   font-size: 1.7rem;
   padding-bottom: 55px;
   color: #3f3f3f;
 }
-.event-item:hover .event-info .name {
+.event-item:hover .upcoming-events .event-info .name {
   color: #024b78;
 }
 
-.upcoming-events .slick-list {
+.events-slider .slick-list {
   margin: 0 -5px;
 }
-.upcoming-events .slick-slide {
+.events-slider .slick-slide {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -1778,6 +1778,7 @@ input:checked ~ .partition-content {
   z-index: 1;
 }
 .video-arrow::before {
+  top: 0;
   z-index: 2;
   width: 10px;
   height: 16px;
@@ -1786,10 +1787,12 @@ input:checked ~ .partition-content {
   right: 0;
 }
 .video-arrow::after {
+  top: 50%;
   content: '';
   position: absolute;
   height: 72px;
   width: 68px;
+  margin-top: calc(-72px / 2);
   background: #024b78;
 }
 .video-arrow:hover.prev-button::before, .video-arrow:hover.next-button::before {
@@ -1801,6 +1804,10 @@ input:checked ~ .partition-content {
 }
 .video-arrow.prev-button {
   left: 50%;
+}
+.video-arrow.prev-button::after {
+  left: 50%;
+  margin-left: calc(-68px / 2);
 }
 @media (max-width: 767px) {
   .video-arrow.prev-button {
@@ -1814,12 +1821,12 @@ input:checked ~ .partition-content {
 }
 @media (min-width: 768px) {
   .video-arrow.prev-button {
-    margin-left: calc(((-720px / 1.05) / 2) + 1.26rem);
+    margin-left: calc(((-720px / 1.05) / 2) + 1.15rem);
   }
 }
 @media (min-width: 992px) {
   .video-arrow.prev-button {
-    margin-left: calc(((-938px / 1.05) / 2) + 0.6rem);
+    margin-left: calc(((-938px / 1.05) / 2) + 0.66rem);
   }
 }
 .video-arrow.prev-button::before {
@@ -1829,6 +1836,10 @@ input:checked ~ .partition-content {
 }
 .video-arrow.next-button {
   right: 50%;
+}
+.video-arrow.next-button::after {
+  right: 50%;
+  margin-right: calc(-68px / 2);
 }
 @media (max-width: 767px) {
   .video-arrow.next-button {
@@ -1938,7 +1949,7 @@ input:checked ~ .partition-content {
 }
 @media (min-width: 768px) {
   .experience .video-slider {
-    height: 394px;
+    height: 393px;
   }
 }
 .experience .video-slider::after {

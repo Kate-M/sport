@@ -21,7 +21,6 @@ $(document).ready(function () {
         }
       ]
     });
-
     $('.video-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       pauseVideo();
     });

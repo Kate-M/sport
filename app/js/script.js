@@ -23,18 +23,22 @@ function createPlayerFromHtml(slide) {
 function createPlayer(videoID) {
   return new YT.Player(videoID, {
     videoId: videoID,
+    host: 'https://www.youtube.com',
     events: {
       'onReady': onPlayerReady
     }
   });
 };
 
-function onYouTubeIframeAPI() {
+function onYouTubeIframeAPIReady() {
+  findPlayer(-1);
   findPlayer(0);
   findPlayer(1);
 }
 
-setTimeout(onYouTubeIframeAPI, 2000);
+$('.video-slider').on('init', function(event, slick){
+  $('.slick-current').prev().find('.video').attr('id', 'onRVRZCj0l4');
+});
 
 function onPlayerReady(event) {
   event.target.setVolume(30);

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   (function () {
-    $('.events-slider').slick({
+    $('.upcoming-events-slider').slick({
       infinite: true,
       dots: true,
       slidesToShow: 3,
@@ -31,17 +31,5 @@ $(document).ready(function () {
       ]
     });
   })();
-  (function () {
-    setMarginPrevButton();
-    function setMarginPrevButton() {
-      var dotsWidth = $('.slick-dots').width();
-      var containerButton = $('.slick-dots').parent();
-      var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
-      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
-
-    };
-    $(window).resize(function () {
-      setMarginPrevButton();
-    });
-  })();
+  setMarginPrevButton();
 });

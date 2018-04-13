@@ -34,7 +34,7 @@
         height: 374px;
         position: relative;
         @include breakpoint(min-width 768px) {
-            height: 394px;
+            height: 393px;
         }
             &::after {
                 content: '';

@@ -13400,18 +13400,22 @@ function createPlayerFromHtml(slide) {
 function createPlayer(videoID) {
   return new YT.Player(videoID, {
     videoId: videoID,
+    host: 'https://www.youtube.com',
     events: {
       'onReady': onPlayerReady
     }
   });
 };
 
-function onYouTubeIframeAPI() {
+function onYouTubeIframeAPIReady() {
+  findPlayer(-1);
   findPlayer(0);
   findPlayer(1);
 }
 
-setTimeout(onYouTubeIframeAPI, 2000);
+$('.video-slider').on('init', function(event, slick){
+  $('.slick-current').prev().find('.video').attr('id', 'onRVRZCj0l4');
+});
 
 function onPlayerReady(event) {
   event.target.setVolume(30);
@@ -13496,54 +13500,6 @@ if ( typeof define === 'function' && define.amd ) {
 
 $(document).ready(function () {
   (function () {
-    $('.events-slider').slick({
-      infinite: true,
-      dots: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      customPaging: function (slider, i) {
-        var thumb = $(slider.$slides[i]).data();
-        return '<button class="slick-dots-item"></button>';
-      },
-      prevArrow: '<button class="event-arrow prev-button"></button>',
-      nextArrow: '<button class="event-arrow next-button"></button>',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: false
-          }
-        }
-      ]
-    });
-  })();
-  (function () {
-    setMarginPrevButton();
-    function setMarginPrevButton() {
-      var dotsWidth = $('.slick-dots').width();
-      var containerButton = $('.slick-dots').parent();
-      var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
-      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
-
-    };
-    $(window).resize(function () {
-      setMarginPrevButton();
-    });
-  })();
-});
-
-$(document).ready(function () {
-  (function () {
     $('.video-slider').slick({
       infinite: true,
       centerMode: true,
@@ -13565,7 +13521,6 @@ $(document).ready(function () {
         }
       ]
     });
-
     $('.video-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       pauseVideo();
     });
@@ -13581,6 +13536,42 @@ $(document).ready(function () {
   })();
 });
 
+// $(document).ready(function () {
+//     (function () {
+//       $('.featured-events-slider').slick({
+//         infinite: true,
+//         dots: true,
+//         slidesToShow: 6,
+//         slidesToScroll: 1,
+//         customPaging: function (slider, i) {
+//           var thumb = $(slider.$slides[i]).data();
+//           return '<button class="slick-dots-item"></button>';
+//         },
+//         prevArrow: '<button class="event-arrow prev-button"></button>',
+//         nextArrow: '<button class="event-arrow next-button"></button>',
+//         responsive: [
+//           {
+//             breakpoint: 1024,
+//             settings: {
+//               slidesToShow: 4,
+//               slidesToScroll: 2
+//             }
+//           },
+//           {
+//             breakpoint: 768,
+//             settings: {
+//               slidesToShow: 2,
+//               slidesToScroll: 1,
+//               arrows: false,
+//               dots: false
+//             }
+//           }
+//         ]
+//       });
+//     })();
+//     setMarginPrevButton();
+//   });
+  
 $('.partition-button').on('click', function () {
     $(this).next().toggleClass('open');
 });
@@ -13591,6 +13582,17 @@ $('.navbar-top-button').on('click', function () {
     $('.page-wrapper').toggleClass('open');
     $(this).toggleClass('open-menu');
 });
+    function setMarginPrevButton() {
+      var dotsWidth = $('.slick-dots').width();
+      var containerButton = $('.slick-dots').parent();
+      var marginPrevButton = parseFloat(dotsWidth) + 30 + 'px';
+      containerButton.find('.event-arrow.prev-button').css('margin-right', marginPrevButton);
+
+    };
+    $(window).resize(function () {
+      setMarginPrevButton();
+    });
+
 $(document).ready(function () {
     var labelsTabs = $('label.partition-name-tab').toArray();
     var inputsTabs = $('.tab-input').toArray();
@@ -13630,3 +13632,39 @@ var timer = setInterval(function () {
 }, 1000);
 
 
+
+$(document).ready(function () {
+  (function () {
+    $('.upcoming-events-slider').slick({
+      infinite: true,
+      dots: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      customPaging: function (slider, i) {
+        var thumb = $(slider.$slides[i]).data();
+        return '<button class="slick-dots-item"></button>';
+      },
+      prevArrow: '<button class="event-arrow prev-button"></button>',
+      nextArrow: '<button class="event-arrow next-button"></button>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false
+          }
+        }
+      ]
+    });
+  })();
+  setMarginPrevButton();
+});

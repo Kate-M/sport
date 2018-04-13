@@ -32,10 +32,10 @@
       margin-left: 29px;
     }
     @include breakpoint(min-width 768px) {
-      margin-left:calc(((-720px / 1.05) / 2) + 1.26rem);
+      margin-left:calc(((-720px / 1.05) / 2) + 1.15rem);
     }
     @include breakpoint(min-width 992px) {
-      margin-left:calc(((-938px / 1.05) / 2) + 0.6rem);
+      margin-left:calc(((-938px / 1.05) / 2) + 0.66rem);
     }
   }
   @if  $side == 'right'{

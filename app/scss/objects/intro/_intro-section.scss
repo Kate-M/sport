@@ -91,6 +91,10 @@
       user-select: none;
       border:1px;
       border-style: solid;
+      transition: none;
+      &:hover {
+        transition: none;
+      }
     }
     .partition-name-tab.active {
       background-color: $color_main;
