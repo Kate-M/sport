@@ -47,6 +47,7 @@ gulp.task('scripts', function () {
     gulp.src([
         'node_modules/jquery/dist/jquery.js',
         'node_modules/slick-carousel/slick/slick.js',
+        'js/modules/experience-slider.js',
         'app/**/*.js'
     ])
         .pipe(concat('scripts.js'))
