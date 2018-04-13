@@ -33,7 +33,7 @@ $(document).ready(function () {
 
       if (nextSlide >= 0 && nextSlide < slick.slideCount) {
         findPlayer(nextSlide);
-        findPlayer(currentSlide);
+        //findPlayer(currentSlide);
       }
     });
   })();

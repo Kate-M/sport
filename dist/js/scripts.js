@@ -13406,11 +13406,8 @@ function createPlayer(videoID) {
 };
 
 function onYouTubeIframeAPIReady() {
-  var countOfSlides = $('.video-slider').slick("getSlick").slideCount;
-  console.log('count:', countOfSlides - 1);
-  findPlayer(countOfSlides - 1);
-  findPlayer(0);
   findPlayer(1);
+  findPlayer(0);
 }
 
 function onPlayerReady(event) {
@@ -13577,7 +13574,7 @@ $(document).ready(function () {
 
       if (nextSlide >= 0 && nextSlide < slick.slideCount) {
         findPlayer(nextSlide);
-        findPlayer(currentSlide);
+        //findPlayer(currentSlide);
       }
     });
   })();
