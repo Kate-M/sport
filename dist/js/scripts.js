@@ -13375,6 +13375,7 @@ return jQuery;
 
 }));
 
+
 var player;
 var playersList = {};
 
@@ -13405,10 +13406,12 @@ function createPlayer(videoID) {
   });
 };
 
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPI() {
   findPlayer(0);
   findPlayer(1);
 }
+
+setTimeout(onYouTubeIframeAPI, 2000);
 
 function onPlayerReady(event) {
   event.target.setVolume(30);
