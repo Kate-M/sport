@@ -29,8 +29,8 @@ function createPlayer(videoID) {
 };
 
 function onYouTubeIframeAPIReady() {
-  findPlayer(1);
   findPlayer(0);
+  findPlayer(1);
 }
 
 function onPlayerReady(event) {

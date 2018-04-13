@@ -13406,8 +13406,8 @@ function createPlayer(videoID) {
 };
 
 function onYouTubeIframeAPIReady() {
-  findPlayer(1);
   findPlayer(0);
+  findPlayer(1);
 }
 
 function onPlayerReady(event) {
@@ -13570,11 +13570,9 @@ $(document).ready(function () {
     $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
       var nextSlide = currentSlide + 1;
       var prevSlide = currentSlide - 1;
-      var activeSlide = document.querySelectorAll('.video-slider .slick-active .item')[0].children[0].getAttribute('class');
-
       if (nextSlide >= 0 && nextSlide < slick.slideCount) {
         findPlayer(nextSlide);
-        //findPlayer(currentSlide);
+        findPlayer(currentSlide);
       }
     });
   })();
