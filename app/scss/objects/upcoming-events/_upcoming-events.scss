@@ -11,8 +11,8 @@
 }
 .event-item-wrap {
     position: relative;
-    //width: 96.5%;
-    width: 305px;
+    width: 96.5%;
+    max-width: 305px;
     margin:0 auto;
     flex-direction: column;
     background: $color_white;

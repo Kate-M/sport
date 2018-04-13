@@ -1448,7 +1448,8 @@ input:checked ~ .partition-content {
 
 .event-item-wrap {
   position: relative;
-  width: 305px;
+  width: 96.5%;
+  max-width: 305px;
   margin: 0 auto;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -1698,9 +1699,28 @@ input:checked ~ .partition-content {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 767px) {
+  .experience .video-slider .slick-list {
+    width: 100%;
+  }
+}
 .experience .video-slider .slick-slide {
-  width: 938px;
   height: 373px;
+}
+@media (max-width: 767px) {
+  .experience .video-slider .slick-slide {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .experience .video-slider .slick-slide {
+    width: calc(720px / 1.05);
+  }
+}
+@media (min-width: 992px) {
+  .experience .video-slider .slick-slide {
+    width: calc(938px / 1.05);
+  }
 }
 .experience .video-slider .slick-track {
   display: -webkit-flex;
@@ -1713,11 +1733,6 @@ input:checked ~ .partition-content {
 .experience .video-slider .slick-center {
   -webkit-animation: size .3s ease-out both;
           animation: size .3s ease-out both;
-}
-@media (max-width: 768px) {
-  .experience .video-slider .slick-center {
-    width: 100%;
-  }
 }
 .experience .video-slider .slick-center .item {
   position: relative;
@@ -1787,14 +1802,24 @@ input:checked ~ .partition-content {
 .video-arrow.prev-button {
   left: 50%;
 }
+@media (max-width: 767px) {
+  .video-arrow.prev-button {
+    left: 0;
+  }
+}
+@media (max-width: 767px) {
+  .video-arrow.prev-button {
+    margin-left: 29px;
+  }
+}
 @media (min-width: 768px) {
   .video-arrow.prev-button {
-    margin-left: calc((-720px / 2) + 5px);
+    margin-left: calc(((-720px / 1.05) / 2) + 1.26rem);
   }
 }
 @media (min-width: 992px) {
   .video-arrow.prev-button {
-    margin-left: calc((-938px / 2) + 5px);
+    margin-left: calc(((-938px / 1.05) / 2) + 0.6rem);
   }
 }
 .video-arrow.prev-button::before {
@@ -1805,14 +1830,24 @@ input:checked ~ .partition-content {
 .video-arrow.next-button {
   right: 50%;
 }
+@media (max-width: 767px) {
+  .video-arrow.next-button {
+    right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .video-arrow.next-button {
+    margin-right: 29px;
+  }
+}
 @media (min-width: 768px) {
   .video-arrow.next-button {
-    margin-right: calc((-720px / 2) + 5px);
+    margin-right: calc(((-720px / 1.05) / 2) + 1.05rem);
   }
 }
 @media (min-width: 992px) {
   .video-arrow.next-button {
-    margin-right: calc((-938px / 2) + 5px);
+    margin-right: calc(((-938px/ 1.05) / 2) + 0.66rem);
   }
 }
 .video-arrow.next-button::before {
@@ -1864,6 +1899,16 @@ input:checked ~ .partition-content {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 40px;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 600px) {
+  .experience .experience-content {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 .experience .button-wrap {
   width: 70%;
@@ -1872,6 +1917,12 @@ input:checked ~ .partition-content {
       -ms-flex-item-align: end;
           align-self: flex-end;
   text-align: right;
+  margin-top: 20px;
+}
+@media (min-width: 600px) {
+  .experience .button-wrap {
+    margin-top: 0px;
+  }
 }
 .experience .video-slider {
   width: 100%;
@@ -1882,13 +1933,19 @@ input:checked ~ .partition-content {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 394px;
+  height: 374px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .experience .video-slider {
+    height: 394px;
+  }
 }
 .experience .video-slider::after {
   content: '';
   position: absolute;
-  left: 50%;
+  left: 0;
+  width: 100%;
   bottom: 0;
   height: 72px;
   margin: 0 auto;
@@ -1896,19 +1953,26 @@ input:checked ~ .partition-content {
 }
 @media (min-width: 768px) {
   .experience .video-slider::after {
+    margin-left: calc((-720px / 1.05) / 2);
+    left: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 767px) {
+  .experience .video-slider::after {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .experience .video-slider::after {
     width: calc(720px / 1.05);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) and (min-width: 992px) {
   .experience .video-slider::after {
     width: calc(938px / 1.05);
   }
 }
-@media (min-width: 768px) {
-  .experience .video-slider::after {
-    margin-left: calc((-720px / 1.05) / 2);
-  }
-}
+
 @media (min-width: 992px) {
   .experience .video-slider::after {
     margin-left: calc((-938px / 1.05) / 2);
@@ -1918,16 +1982,18 @@ input:checked ~ .partition-content {
   background-color: #000000;
   height: 100%;
 }
-.experience .video-slider .item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  margin-left: 9%;
-  background: rgba(0, 0, 0, 0.075);
+@media (min-width: 768px) {
+  .experience .video-slider .item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 9%;
+    background: rgba(0, 0, 0, 0.075);
+  }
 }
 .experience .video-slider .image {
   width: 100%;
@@ -1947,6 +2013,9 @@ input:checked ~ .partition-content {
 
 @-webkit-keyframes size {
   from {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
     @media (min-width: 768px) {
       width: 720px;
     }
@@ -1955,6 +2024,9 @@ input:checked ~ .partition-content {
     }
   }
   to {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
     @media (min-width: 768px) {
       width: calc(720px / 1.05);
     }
@@ -1966,6 +2038,9 @@ input:checked ~ .partition-content {
 
 @keyframes size {
   from {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
     @media (min-width: 768px) {
       width: 720px;
     }
@@ -1974,6 +2049,9 @@ input:checked ~ .partition-content {
     }
   }
   to {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
     @media (min-width: 768px) {
       width: calc(720px / 1.05);
     }

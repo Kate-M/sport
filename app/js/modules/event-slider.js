@@ -1,7 +1,7 @@
 $(document).ready(function () {
   (function () {
     $('.events-slider').slick({
-      //infinite: true,
+      infinite: true,
       dots: true,
       slidesToShow: 3,
       slidesToScroll: 3,

@@ -67,10 +67,21 @@
         .slick-list {
             overflow:visible;
             align-items: center;
+            @include breakpoint(max-width 767px) {
+                width: 100%;
+            }
         }
         .slick-slide {
-            width: 938px;
             height: 373px;
+            @include breakpoint(max-width 767px) {
+                width:100%;
+            }
+            @include breakpoint(min-width 768px) {
+                width:calc(720px / 1.05);
+            }
+            @include breakpoint(min-width 992px) {
+                width:calc(938px / 1.05);
+            }
         }
         .slick-track {
             display: flex;
@@ -78,15 +89,14 @@
         }
         .slick-center {
             animation: size .3s ease-out both;
-            @include breakpoint(max-width 768px) {
-                width: 100%;
-            }
               .item {
                 position: relative;
                 z-index: 1;
                 display: flex;
                 align-items: center;
+                
                 animation: show .3s ease-out both;
+
                 &::before {
                     display: none;
                 }
@@ -139,6 +149,9 @@
     } 
     &.prev-button {
         left: 50%;
+        @include breakpoint(max-width 767px) {
+            left: 0;
+        }
         @include marginForArrow('left');
         &::before {
             left:0;
@@ -147,6 +160,9 @@
     }
     &.next-button {
         right: 50%;
+       @include breakpoint(max-width 767px) {
+            right: 0;
+       }
        @include marginForArrow('right');
         &::before {
             right:0;

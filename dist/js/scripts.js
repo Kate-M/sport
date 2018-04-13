@@ -13380,14 +13380,20 @@ var playersList = {};
 
 function findPlayer(slide) {
   var newPlayer = playersList[slide];
-  player = newPlayer || createPlayerFromHtml();
+  player = newPlayer || createPlayerFromHtml(slide);
+
   playersList[slide] = player;
-  return playersList;
+
+  return player;
 }
 
-function createPlayerFromHtml() {
-  var idActiveSlide = document.querySelectorAll('.video-slider .slick-active .video')[0].getAttribute('id')
-  return createPlayer(idActiveSlide)
+function createPlayerFromHtml(slide) {
+  var source = document.querySelector(".video-slider [data-slick-index=\"" + slide + "\"] .video");
+
+  if (!source) return null;
+
+  var id = source['id'];
+  return createPlayer(id)
 }
 
 function createPlayer(videoID) {
@@ -13400,7 +13406,11 @@ function createPlayer(videoID) {
 };
 
 function onYouTubeIframeAPIReady() {
-  findPlayer('0');
+  var countOfSlides = $('.video-slider').slick("getSlick").slideCount;
+  console.log('count:', countOfSlides - 1);
+  findPlayer(countOfSlides - 1);
+  findPlayer(0);
+  findPlayer(1);
 }
 
 function onPlayerReady(event) {
@@ -13408,11 +13418,13 @@ function onPlayerReady(event) {
   event.target.stopVideo();
 }
 function playVideo() {
-  player.playVideo();
-};
+  if (player) player.playVideo();
+}
+
 function pauseVideo() {
-  player.pauseVideo();
+  if (player) player.pauseVideo();
 };
+
 
 ( function( window ) {
 
@@ -13485,7 +13497,7 @@ if ( typeof define === 'function' && define.amd ) {
 $(document).ready(function () {
   (function () {
     $('.events-slider').slick({
-      //infinite: true,
+      infinite: true,
       dots: true,
       slidesToShow: 3,
       slidesToScroll: 3,
@@ -13536,7 +13548,7 @@ $(document).ready(function () {
       infinite: true,
       centerMode: true,
       dots: false,
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       speed: 1000,
       variableWidth: true,
@@ -13546,22 +13558,26 @@ $(document).ready(function () {
         {
           breakpoint: 768,
           settings: {
+            slidesToShow: 1,
+            variableWidth: false,
+            centerMode: false
           }
         }
       ]
     });
 
-    $('.video-slider').on('beforeChange', function (event,slick, currentSlide, nextSlide) {
+    $('.video-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       pauseVideo();
     });
 
     $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
-      var nexSlide = currentSlide + 1;
+      var nextSlide = currentSlide + 1;
+      var prevSlide = currentSlide - 1;
       var activeSlide = document.querySelectorAll('.video-slider .slick-active .item')[0].children[0].getAttribute('class');
-      if(activeSlide === 'video') {
-        if(nexSlide <= slick.slideCount && nexSlide >= 0 ) {
-          findPlayer(currentSlide);
-        }
+
+      if (nextSlide >= 0 && nextSlide < slick.slideCount) {
+        findPlayer(nextSlide);
+        findPlayer(currentSlide);
       }
     });
   })();
@@ -13577,22 +13593,24 @@ $('.navbar-top-button').on('click', function () {
     $('.page-wrapper').toggleClass('open');
     $(this).toggleClass('open-menu');
 });
-var labelsTabs = $('label.partition-name-tab').toArray();
-var inputsTabs = $('.tab-input').toArray();
+$(document).ready(function () {
+    var labelsTabs = $('label.partition-name-tab').toArray();
+    var inputsTabs = $('.tab-input').toArray();
 
-inputsTabs.forEach(function (el) {
-    el.addEventListener("change", changeActiveTab, false);
-})
-
-function changeActiveTab(e) {
-    labelsTabs.forEach(function (el) {
-        if (!el.control.checked) {
-            el.classList.remove('active');
-        }
+    inputsTabs.forEach(function (el) {
+        el.addEventListener("change", changeActiveTab, false);
     })
-    var labelFor = e.srcElement.attributes["id"].value;
-    e.srcElement.labels[0].classList.add('active');
-}
+
+    function changeActiveTab(e) {
+        labelsTabs.forEach(function (el) {
+            if (!el.control.checked) {
+                el.classList.remove('active');
+            }
+        })
+        var labelFor = e.srcElement.attributes["id"].value;
+        e.srcElement.labels[0].classList.add('active');
+    }
+});
 
 var endTime = new Date("Sep 4, 2018 05:01:50").getTime();
 var timer = setInterval(function () {

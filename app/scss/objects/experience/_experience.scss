@@ -11,31 +11,44 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 40px;
+        flex-direction: column;
+        @include breakpoint(min-width 600px) {
+            flex-direction: row;
+        }
     }
     .button-wrap {
         width: 70%;
         padding-bottom: 7px;
         align-self: flex-end;
         text-align: right;
+        margin-top:20px;
+        @include breakpoint(min-width 600px) {
+            margin-top:0px;
+        }
     }
     .video-slider {
         width: 100%;
         overflow: hidden;
         display: flex;
         justify-content: center;
-        height: 394px;
+        height: 374px;
         position: relative;
+        @include breakpoint(min-width 768px) {
+            height: 394px;
+        }
             &::after {
-                @include adaptiveWidth();
                 content: '';
                 position: absolute;
-                left: 50%;
+                left: 0;
+                width:100%;
                 bottom: 0;
                 height: 72px;
                 margin: 0 auto;
                 background:transparentize($color_main, .2);
                 @include breakpoint(min-width 768px) {
-                    margin-left: calc((-720px / 1.05) / 2)
+                    margin-left: calc((-720px / 1.05) / 2);
+                    @include adaptiveWidth();
+                    left: 50%;
                 }
                 @include breakpoint(min-width 992px) {
                     margin-left: calc((-938px / 1.05) / 2);
@@ -43,17 +56,19 @@
             }
             .item {
                 background-color:$color_black;
-                height: 100%;;
-                &::before {
-                    content:'';
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    z-index: 0;
-                    width: 100%;
-                    height: 100%;
-                    margin-left: 9%;
-                    background: transparentize($color_black, .925);
+                height: 100%;
+                @include breakpoint(min-width 768px) {
+                    &::before {
+                        content:'';
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100%;
+                        margin-left: 9%;
+                        background: transparentize($color_black, .925);
+                    }
                 }
             }
             .image {
@@ -76,6 +91,10 @@
  }
  @keyframes size {
     from {
+        @include breakpoint(max-width 767px) {
+           // width: 300px;
+           width: 100%;
+        }
         @include breakpoint(min-width 768px) {
             width:720px;
         }
@@ -84,17 +103,24 @@
         }
     }
     to {
-            @include adaptiveWidth();
-       
+        @include breakpoint(max-width 767px) {
+            width: 100%;
+        }
+        @include breakpoint(min-width 768px) {
+            width:calc(720px / 1.05);
+        }
+        @include breakpoint(min-width 992px) {
+            width:calc(938px / 1.05);
+        }
     }
 } 
 @keyframes show {
-from {
-    transform: scale(1);
-    opacity: .5;
-}
-to {
-    opacity: 1;
-    transform: scale(1.05);
-}
+    from {
+        transform: scale(1);
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }

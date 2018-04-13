@@ -3,14 +3,20 @@ var playersList = {};
 
 function findPlayer(slide) {
   var newPlayer = playersList[slide];
-  player = newPlayer || createPlayerFromHtml();
+  player = newPlayer || createPlayerFromHtml(slide);
+
   playersList[slide] = player;
-  return playersList;
+
+  return player;
 }
 
-function createPlayerFromHtml() {
-  var idActiveSlide = document.querySelectorAll('.video-slider .slick-active .video')[0].getAttribute('id')
-  return createPlayer(idActiveSlide)
+function createPlayerFromHtml(slide) {
+  var source = document.querySelector(".video-slider [data-slick-index=\"" + slide + "\"] .video");
+
+  if (!source) return null;
+
+  var id = source['id'];
+  return createPlayer(id)
 }
 
 function createPlayer(videoID) {
@@ -23,7 +29,11 @@ function createPlayer(videoID) {
 };
 
 function onYouTubeIframeAPIReady() {
-  findPlayer('0');
+  var countOfSlides = $('.video-slider').slick("getSlick").slideCount;
+  console.log('count:', countOfSlides - 1);
+  findPlayer(countOfSlides - 1);
+  findPlayer(0);
+  findPlayer(1);
 }
 
 function onPlayerReady(event) {
@@ -31,8 +41,9 @@ function onPlayerReady(event) {
   event.target.stopVideo();
 }
 function playVideo() {
-  player.playVideo();
-};
+  if (player) player.playVideo();
+}
+
 function pauseVideo() {
-  player.pauseVideo();
+  if (player) player.pauseVideo();
 };

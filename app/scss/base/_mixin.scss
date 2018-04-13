@@ -16,28 +16,37 @@
     background-position: $x $y;
   }
   @mixin adaptiveWidth {
+    @include breakpoint(max-width 767px) {
+      width: 100%;
+    }
     @include breakpoint(min-width 768px) {
-        width:calc(720px / 1.05);
-      }
-      @include breakpoint(min-width 992px) {
-        width:calc(938px / 1.05);
-      }
+      width:calc(720px / 1.05);
+    }
+    @include breakpoint(min-width 992px) {
+      width:calc(938px / 1.05);
+    }
 }
 @mixin marginForArrow($side){
   @if  $side == 'left' {
+    @include breakpoint(max-width 767px) {
+      margin-left: 29px;
+    }
     @include breakpoint(min-width 768px) {
-      margin-left:calc((-720px / 2) + 5px);
+      margin-left:calc(((-720px / 1.05) / 2) + 1.26rem);
     }
     @include breakpoint(min-width 992px) {
-      margin-left:calc((-938px / 2) + 5px);
+      margin-left:calc(((-938px / 1.05) / 2) + 0.6rem);
     }
   }
   @if  $side == 'right'{
+    @include breakpoint(max-width 767px) {
+      margin-right: 29px;
+    }
     @include breakpoint(min-width 768px) {
-      margin-right:calc((-720px / 2) + 5px);
+      margin-right:calc(((-720px / 1.05) / 2) + 1.05rem);
     }
     @include breakpoint(min-width 992px) {
-      margin-right:calc((-938px / 2) + 5px);
+      margin-right:calc(((-938px/ 1.05) / 2) + 0.66rem);
     }
   }
 }
