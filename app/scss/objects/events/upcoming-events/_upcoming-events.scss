@@ -5,21 +5,10 @@
     .title {
         padding: 37px 0;
     }
-    .event-item {
-        height: 100%;
-    }
     .event-item-wrap {
-        position: relative;
-        width: 96.5%;
         max-width: 305px;
-        margin:0 auto;
-        flex-direction: column;
-        background: $color_white;
-        cursor: pointer;
-        height: 100%;
     }
     .event-image-wrap {
-        position: relative;
         height: 243px;
         .event1 {
             background: url(../images/upcoming-events/evnt10.jpg);
@@ -35,28 +24,15 @@
             background-repeat: no-repeat;
             height: 100%;
             filter: grayscale(100%);
-            .event-item:hover & {
-                filter: grayscale(0);
-            }
         }
         .logo1 {
-            background: url(../images/sport-logo/frozen-four-big.png);
+            background-image: url(../images/sport-logo/frozen-four-big.png);
         }
         .logo2 {
-            background: url(../images/sport-logo/sprint-cup-big.png);
+            background-image: url(../images/sport-logo/sprint-cup-big.png);
         }
         .logo3 {
-            background: url(../images/sport-logo/2016-final-four-big.png);
-        }
-        .logo {
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            @include center-all;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-image: url(../images/sport-logo/2016-final-four-big.png);
         }
         .activity-buttons-wrap {
             position: absolute;
@@ -99,13 +75,9 @@
             }
         }
     }
-
-
     .event-info {
-        padding: 15px 13px 0;
         color:#7f7f7f;
-        font-family: $font_SSM;
-        font-size: 1.2rem;
+        padding: 15px 13px 0;
         .info {
             display: flex;
             justify-content: space-between;
@@ -120,10 +92,7 @@
             }
         }
         .bottom-info {
-            position: absolute;
             bottom: 25px;
-            left: 0;
-            width: 100%;
             padding: 0 13px;
             .event-packages-button {
                 text-transform: uppercase;
@@ -134,13 +103,8 @@
             }
         }
         .name {
-            font-family: $font_SSBL;
             font-size: 1.7rem;
             padding-bottom: 55px;
-            color:#3f3f3f;
-            .event-item:hover & {
-                color:$color_main;
-            }
         }
     }
 }

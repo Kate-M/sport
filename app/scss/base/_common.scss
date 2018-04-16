@@ -39,7 +39,7 @@
     overflow-x: hidden;
     font-size: 1.4rem;
     letter-spacing: 0.4px;
-    //background: url(../images/temp.jpg) center 0 no-repeat;
+    // background: url(../images/temp.jpg) center 0 no-repeat;
   }
   button {
     cursor: pointer;
@@ -116,6 +116,7 @@
   }
   .title {
     h2 {
+      letter-spacing: 1px;
       font-family: $font_SSBL;
       font-size: 2rem;
       color:#3f3f3f;

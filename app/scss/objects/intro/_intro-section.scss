@@ -49,24 +49,21 @@
     @include breakpoint(max-width 600px) {
       width: 100%;
     }
-    
-    &:last-child > .partition-name-tab {
-      border-right-width: 1px;
-    }
-  }
-  .partition-tab-list {
-    @include breakpoint(max-width 600px) {
-      height: 0;
-      &.open {
-        height: 100%;
+    .link {
+      display: block;
+      border-style: solid;
+      height: 60px;
+      &:hover {
+        border-color:$color_blue_80;
+      }
+      &:focus {
+        border-color:$color_main;
       }
     }
   }
   .partition-tab-item{
     & > .partition-name-tab {
-      
       font-size: 1.44rem;
-      
     }
     .partition-tab-list &:last-child {
       width:96px;
@@ -77,14 +74,12 @@
       }
     }
     .link {
-      display: block;
-      border:1px;
-      border-style: solid;
-      height: 60px;
+      border-width:1px;
       border-left:0;
-      &:hover {
-        border-color:$color_blue_80;
-      }
+      border-color: #ebebeb;
+    }
+    &:last-child .link {
+      border-right-width: 1px;
     }
   }
     .partition-name-tab {
@@ -98,12 +93,11 @@
         transition: none;
       }
       .link:hover & {
-          background: $color_blue_80;
-          border-color:$color_blue_80;
+        background: $color_blue_80;
+        color:$color_white;
       }
       .link:focus & {
         background-color: $color_main;
-        border-color:$color_main;
         color:$color_white;
       }
     }

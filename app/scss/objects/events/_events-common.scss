@@ -1,0 +1,53 @@
+.events-slider {
+    .event-item {
+        height: 100%;
+        &:hover {
+            .image {
+                filter: grayscale(0);
+            }
+            .name {
+                color:$color_main;
+            }
+        }
+    }
+    .event-item-wrap {
+        position: relative;
+        width: 96.5%;
+        margin:0 auto;
+        flex-direction: column;
+        background: $color_white;
+        cursor: pointer;
+        height: 100%;
+    }
+    .event-image-wrap {
+        position: relative;
+    }
+    .image{
+        height: 100%;
+    }
+    .event-image-wrap {
+        .logo {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include center-all;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+    .event-info {
+        font-family: $font_SSM;
+        font-size: 1.2rem;
+        .name {
+            font-family: $font_SSBL;
+            color:#3f3f3f;
+        }
+        .bottom-info {
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+    }    
+}

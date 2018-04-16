@@ -10,7 +10,7 @@
     .experience-content {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 40px;
+        padding-bottom: 33px;
         flex-direction: column;
         @include breakpoint(min-width 600px) {
             flex-direction: row;
@@ -64,7 +64,7 @@
                         top:0;
                         left:0;
                         z-index: 0;
-                        width: 100%;
+                        width: 120%;
                         height: 100%;
                         background: transparentize($color_black, .925);
                     }

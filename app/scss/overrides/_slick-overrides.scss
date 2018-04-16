@@ -35,6 +35,24 @@
     right: 0;
     margin-top: -50px;
 }
+.slick-dots {
+    margin-right: 20px;
+    max-width: 75%;
+    overflow: hidden;
+    @include center-v;
+}
+.slick-dots-item {
+    width: 10px;
+    height: 10px;
+    border:1px solid #3f3f3f;
+    margin:0 7px;
+    &:hover {
+        background: transparentize(#3f3f3f, .8)
+    }
+    .slick-active & {
+        background: #3f3f3f;
+    }
+}
 .event-arrow {
     width: 10px;
     height: 15px;
@@ -93,9 +111,7 @@
                 z-index: 1;
                 display: flex;
                 align-items: center;
-                
                 animation: show .3s ease-out both;
-
                 &::before {
                     display: none;
                 }
@@ -180,21 +196,3 @@
         }
     }
 }    
-.slick-dots {
-    margin-right: 20px;
-    max-width: 75%;
-    overflow: hidden;
-    @include center-v;
-}
-.slick-dots-item {
-    width: 10px;
-    height: 10px;
-    border:1px solid #3f3f3f;
-    margin:0 7px;
-    &:hover {
-        background: transparentize(#3f3f3f, .8)
-    }
-    .slick-active & {
-        background: #3f3f3f;
-    }
-}

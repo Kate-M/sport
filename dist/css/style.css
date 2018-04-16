@@ -792,6 +792,7 @@ img {
 }
 
 .title h2 {
+  letter-spacing: 1px;
   font-family: "StagSans-Bold", sans-serif;
   font-size: 2rem;
   color: #3f3f3f;
@@ -1061,16 +1062,17 @@ img {
   position: relative;
 }
 
-.partition-subtab-item > .partition-name-tab {
-  color: #ffffff;
-  border-top: 0;
-  border-bottom: 0;
+.partition-subtab-item .link {
+  border-left-width: 1px;
   border-color: rgba(255, 255, 255, 0.2);
+}
+.partition-subtab-item:last-child .link {
+  border-right-width: 1px;
+}
+.partition-subtab-item .partition-name-tab {
+  color: #ffffff;
   font-size: 1.2rem;
   text-transform: uppercase;
-}
-.partition-subtab-item > .partition-name-tab:hover {
-  border-color: rgba(2, 75, 120, 0.8);
 }
 
 .subcontent-list {
@@ -1308,17 +1310,16 @@ img {
     width: 100%;
   }
 }
-.tab-item:last-child > .partition-name-tab {
-  border-right-width: 1px;
+.tab-item .link {
+  display: block;
+  border-style: solid;
+  height: 60px;
 }
-
-@media (max-width: 600px) {
-  .partition-tab-list {
-    height: 0;
-  }
-  .partition-tab-list.open {
-    height: 100%;
-  }
+.tab-item .link:hover {
+  border-color: rgba(2, 75, 120, 0.8);
+}
+.tab-item .link:focus {
+  border-color: #024b78;
 }
 
 .partition-tab-item > .partition-name-tab {
@@ -1333,14 +1334,12 @@ img {
   }
 }
 .partition-tab-item .link {
-  display: block;
-  border: 1px;
-  border-style: solid;
-  height: 60px;
+  border-width: 1px;
   border-left: 0;
+  border-color: #ebebeb;
 }
-.partition-tab-item .link:hover {
-  border-color: rgba(2, 75, 120, 0.8);
+.partition-tab-item:last-child .link {
+  border-right-width: 1px;
 }
 
 .partition-name-tab {
@@ -1367,11 +1366,10 @@ img {
 }
 .link:hover .partition-name-tab {
   background: rgba(2, 75, 120, 0.8);
-  border-color: rgba(2, 75, 120, 0.8);
+  color: #ffffff;
 }
 .link:focus .partition-name-tab {
   background-color: #024b78;
-  border-color: #024b78;
   color: #ffffff;
 }
 
@@ -1439,21 +1437,19 @@ input:checked ~ .partition-content {
   background-position: -10px 274px;
 }
 
-.upcoming-events {
-  background: #f6f6f6;
-  position: relative;
-  padding-bottom: 44px;
-}
-.upcoming-events .title {
-  padding: 37px 0;
-}
-.upcoming-events .event-item {
+.events-slider .event-item {
   height: 100%;
 }
-.upcoming-events .event-item-wrap {
+.events-slider .event-item:hover .image {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+.events-slider .event-item:hover .name {
+  color: #024b78;
+}
+.events-slider .event-item-wrap {
   position: relative;
   width: 96.5%;
-  max-width: 305px;
   margin: 0 auto;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -1462,8 +1458,56 @@ input:checked ~ .partition-content {
   cursor: pointer;
   height: 100%;
 }
-.upcoming-events .event-image-wrap {
+.events-slider .event-image-wrap {
   position: relative;
+}
+.events-slider .image {
+  height: 100%;
+}
+.events-slider .event-image-wrap .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.events-slider .event-info {
+  font-family: "StagSans-Medium", sans-serif;
+  font-size: 1.2rem;
+}
+.events-slider .event-info .name {
+  font-family: "StagSans-Bold", sans-serif;
+  color: #3f3f3f;
+}
+.events-slider .event-info .bottom-info {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.upcoming-events {
+  background: #f6f6f6;
+  position: relative;
+  padding-bottom: 44px;
+}
+.upcoming-events .title {
+  padding: 37px 0;
+}
+.upcoming-events .event-item-wrap {
+  max-width: 305px;
+}
+.upcoming-events .event-image-wrap {
   height: 243px;
 }
 .upcoming-events .event-image-wrap .event1 {
@@ -1482,36 +1526,14 @@ input:checked ~ .partition-content {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
-.event-item:hover .upcoming-events .event-image-wrap .image {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
 .upcoming-events .event-image-wrap .logo1 {
-  background: url(../images/sport-logo/frozen-four-big.png);
+  background-image: url(../images/sport-logo/frozen-four-big.png);
 }
 .upcoming-events .event-image-wrap .logo2 {
-  background: url(../images/sport-logo/sprint-cup-big.png);
+  background-image: url(../images/sport-logo/sprint-cup-big.png);
 }
 .upcoming-events .event-image-wrap .logo3 {
-  background: url(../images/sport-logo/2016-final-four-big.png);
-}
-.upcoming-events .event-image-wrap .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url(../images/sport-logo/2016-final-four-big.png);
 }
 .upcoming-events .event-image-wrap .activity-buttons-wrap {
   position: absolute;
@@ -1566,10 +1588,8 @@ input:checked ~ .partition-content {
   background-position: 71px -39px;
 }
 .upcoming-events .event-info {
-  padding: 15px 13px 0;
   color: #7f7f7f;
-  font-family: "StagSans-Medium", sans-serif;
-  font-size: 1.2rem;
+  padding: 15px 13px 0;
 }
 .upcoming-events .event-info .info {
   display: -webkit-flex;
@@ -1589,10 +1609,7 @@ input:checked ~ .partition-content {
   font-family: "StagSans-Bold", sans-serif;
 }
 .upcoming-events .event-info .bottom-info {
-  position: absolute;
   bottom: 25px;
-  left: 0;
-  width: 100%;
   padding: 0 13px;
 }
 .upcoming-events .event-info .bottom-info .event-packages-button {
@@ -1608,13 +1625,8 @@ input:checked ~ .partition-content {
   color: #024b78;
 }
 .upcoming-events .event-info .name {
-  font-family: "StagSans-Bold", sans-serif;
   font-size: 1.7rem;
   padding-bottom: 55px;
-  color: #3f3f3f;
-}
-.event-item:hover .upcoming-events .event-info .name {
-  color: #024b78;
 }
 
 .events-slider .slick-list {
@@ -1664,6 +1676,31 @@ input:checked ~ .partition-content {
   top: 0;
   right: 0;
   margin-top: -50px;
+}
+
+.slick-dots {
+  margin-right: 20px;
+  max-width: 75%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slick-dots-item {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #3f3f3f;
+  margin: 0 7px;
+}
+.slick-dots-item:hover {
+  background: rgba(63, 63, 63, 0.2);
+}
+.slick-active .slick-dots-item {
+  background: #3f3f3f;
 }
 
 .event-arrow {
@@ -1869,31 +1906,6 @@ input:checked ~ .partition-content {
   background-position: 285px -629px;
 }
 
-.slick-dots {
-  margin-right: 20px;
-  max-width: 75%;
-  overflow: hidden;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.slick-dots-item {
-  width: 10px;
-  height: 10px;
-  border: 1px solid #3f3f3f;
-  margin: 0 7px;
-}
-.slick-dots-item:hover {
-  background: rgba(63, 63, 63, 0.2);
-}
-.slick-active .slick-dots-item {
-  background: #3f3f3f;
-}
-
 .experience {
   position: relative;
 }
@@ -1911,7 +1923,7 @@ input:checked ~ .partition-content {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 40px;
+  padding-bottom: 33px;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -2002,7 +2014,7 @@ input:checked ~ .partition-content {
     top: 0;
     left: 0;
     z-index: 0;
-    width: 100%;
+    width: 120%;
     height: 100%;
     background: rgba(0, 0, 0, 0.075);
   }
@@ -2104,4 +2116,82 @@ input:checked ~ .partition-content {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
+}
+.feature-events .title {
+  padding: 24px 0 35px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 600px) {
+  .feature-events .title {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.feature-events .title .filter {
+  margin-left: 27px;
+}
+.feature-events .title .filter select {
+  background: #b3b3b3;
+  border-radius: 4px;
+  border: 0;
+  padding: 10px 5px;
+  max-width: 244px;
+  color: #fff;
+}
+.feature-events .featured-events-slider {
+  padding-top: 5px;
+}
+.feature-events .event-item-wrap {
+  max-width: 146px;
+}
+.feature-events .event-image-wrap {
+  height: 146px;
+  background: #f6f6f6;
+}
+.feature-events .event-image-wrap .logo1 {
+  background-image: url(../images/sport-logo/2016-final-four.png);
+}
+.feature-events .event-image-wrap .logo2 {
+  background-image: url(../images/sport-logo/2015-basketball.png);
+}
+.feature-events .event-image-wrap .logo3 {
+  background-image: url(../images/sport-logo/wrestling.png);
+}
+.feature-events .event-image-wrap .logo4 {
+  background-image: url(../images/sport-logo/final-four-tampa-bay.png);
+}
+.feature-events .event-image-wrap .logo5 {
+  background-image: url(../images/sport-logo/frozen-four.png);
+}
+.feature-events .event-image-wrap .logo6 {
+  background-image: url(../images/sport-logo/womens-college.png);
+}
+.feature-events .event-info {
+  color: #3f3f3f;
+  font-family: "StagSans-Medium", sans-serif;
+  font-size: 1.2rem;
+}
+.feature-events .event-info .name {
+  padding: 12px 20px 45px 0;
+  font-family: "StagSans-Bold", sans-serif;
+  font-size: 1.4rem;
+  color: #3f3f3f;
+}
+.event-item:hover .feature-events .event-info .name {
+  color: #024b78;
+}
+.feature-events .event-info .bottom-info {
+  bottom: 3px;
+}
+.feature-events .event-info .location {
+  padding-top: 10px;
+  color: #959595;
+  font-family: "StagSans-Book", sans-serif;
+  font-size: 1.1rem;
 }
