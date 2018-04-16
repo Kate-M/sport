@@ -1308,10 +1308,6 @@ img {
     width: 100%;
   }
 }
-.tab-item:hover {
-  background: rgba(2, 75, 120, 0.8);
-  color: #ffffff;
-}
 .tab-item:last-child > .partition-name-tab {
   border-right-width: 1px;
 }
@@ -1326,12 +1322,7 @@ img {
 }
 
 .partition-tab-item > .partition-name-tab {
-  border-color: #ebebeb;
   font-size: 1.44rem;
-  border-left: 0;
-}
-.partition-tab-item > .partition-name-tab:hover {
-  border-color: rgba(2, 75, 120, 0.8);
 }
 .partition-tab-list .partition-tab-item:last-child {
   width: 96px;
@@ -1340,6 +1331,16 @@ img {
   .partition-tab-list .partition-tab-item:last-child {
     width: 100%;
   }
+}
+.partition-tab-item .link {
+  display: block;
+  border: 1px;
+  border-style: solid;
+  height: 60px;
+  border-left: 0;
+}
+.partition-tab-item .link:hover {
+  border-color: rgba(2, 75, 120, 0.8);
 }
 
 .partition-name-tab {
@@ -1353,21 +1354,22 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   letter-spacing: 0.6px;
-  height: 60px;
+  height: 100%;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 1px;
-  border-style: solid;
   transition: none;
 }
 .partition-name-tab:hover {
   transition: none;
 }
-
-.partition-name-tab.active {
+.link:hover .partition-name-tab {
+  background: rgba(2, 75, 120, 0.8);
+  border-color: rgba(2, 75, 120, 0.8);
+}
+.link:focus .partition-name-tab {
   background-color: #024b78;
   border-color: #024b78;
   color: #ffffff;
@@ -2002,7 +2004,6 @@ input:checked ~ .partition-content {
     z-index: 0;
     width: 100%;
     height: 100%;
-    margin-left: 9%;
     background: rgba(0, 0, 0, 0.075);
   }
 }
@@ -2014,6 +2015,15 @@ input:checked ~ .partition-content {
 }
 .experience .video-slider .image1 {
   background-image: url(../images/image.jpg);
+}
+.experience .video-slider .image2 {
+  background-image: url(../images/bg-left.jpg);
+}
+.experience .video-slider .image3 {
+  background-image: url(../images/bg-right.jpg);
+}
+.experience .video-slider .image4 {
+  background-image: url(../images/intro1.jpg);
 }
 .experience .video-slider .video {
   width: 100%;

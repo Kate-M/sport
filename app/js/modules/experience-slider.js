@@ -4,7 +4,7 @@ $(document).ready(function () {
       infinite: true,
       centerMode: true,
       dots: false,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       speed: 1000,
       variableWidth: true,
@@ -24,14 +24,10 @@ $(document).ready(function () {
     $('.video-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       pauseVideo();
     });
-
-    $('.video-slider').on('afterChange', function (event, slick, currentSlide) {
-      var nextSlide = currentSlide + 1;
-      var prevSlide = currentSlide - 1;
-      if (nextSlide >= 0 && nextSlide < slick.slideCount) {
-        findPlayer(nextSlide);
-        findPlayer(currentSlide);
-      }
-    });
   })();
+  function pauseVideo() {
+    $(".video-slider .item .video").each(function(){
+      this.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*')
+    });
+  };
 });

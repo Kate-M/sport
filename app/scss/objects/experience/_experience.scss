@@ -66,7 +66,6 @@
                         z-index: 0;
                         width: 100%;
                         height: 100%;
-                        margin-left: 9%;
                         background: transparentize($color_black, .925);
                     }
                 }
@@ -79,6 +78,18 @@
             }
             .image1 {
                 background-image: url(../images/image.jpg);
+                
+            }
+            .image2 {
+                background-image: url(../images/bg-left.jpg);
+                
+            }
+            .image3 {
+                background-image: url(../images/bg-right.jpg);
+                
+            }
+            .image4 {
+                background-image: url(../images/intro1.jpg);
                 
             }
         .video {

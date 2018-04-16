@@ -49,10 +49,7 @@
     @include breakpoint(max-width 600px) {
       width: 100%;
     }
-    &:hover {
-      background: $color_blue_80;
-      color:$color_white;
-    }
+    
     &:last-child > .partition-name-tab {
       border-right-width: 1px;
     }
@@ -67,12 +64,9 @@
   }
   .partition-tab-item{
     & > .partition-name-tab {
-      border-color:#ebebeb;
+      
       font-size: 1.44rem;
-      border-left:0;
-      &:hover {
-        border-color:$color_blue_80;
-      }
+      
     }
     .partition-tab-list &:last-child {
       width:96px;
@@ -82,25 +76,38 @@
         width:100%;
       }
     }
+    .link {
+      display: block;
+      border:1px;
+      border-style: solid;
+      height: 60px;
+      border-left:0;
+      &:hover {
+        border-color:$color_blue_80;
+      }
+    }
   }
     .partition-name-tab {
       @include center-all;
       letter-spacing: 0.6px;
-      height: 60px;
+      height: 100%;
       cursor: pointer;
       user-select: none;
-      border:1px;
-      border-style: solid;
       transition: none;
       &:hover {
         transition: none;
       }
+      .link:hover & {
+          background: $color_blue_80;
+          border-color:$color_blue_80;
+      }
+      .link:focus & {
+        background-color: $color_main;
+        border-color:$color_main;
+        color:$color_white;
+      }
     }
-    .partition-name-tab.active {
-      background-color: $color_main;
-      border-color:$color_main;
-      color:$color_white;
-    }
+    
     input:checked ~ .partition-content {
       display: block;
     }
