@@ -2122,27 +2122,29 @@ input:checked ~ .partition-content {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .feature-events .title {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 .feature-events .title .filter {
-  margin-left: 27px;
+  margin-top: 27px;
+  margin-left: 0;
 }
-.feature-events .title .filter select {
-  background: #b3b3b3;
-  border-radius: 4px;
-  border: 0;
-  padding: 10px 5px;
-  max-width: 244px;
-  color: #fff;
+@media (min-width: 600px) {
+  .feature-events .title .filter {
+    margin-top: 0;
+    margin-left: 27px;
+  }
 }
 .feature-events .featured-events-slider {
   padding-top: 5px;
@@ -2194,4 +2196,99 @@ input:checked ~ .partition-content {
   color: #959595;
   font-family: "StagSans-Book", sans-serif;
   font-size: 1.1rem;
+}
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 1.2rem;
+  color: #ffffff;
+  width: 244px;
+  height: 32px;
+}
+
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #b3b3b3;
+  padding: 11px 15px;
+  transition: all 0.2s ease-in;
+  border-radius: 4px;
+}
+.select-styled::after {
+  content: "";
+  width: 11px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -4px;
+  margin-right: 15px;
+  background: url(../images/ico-sprites.png);
+  background-position: -10px -10px;
+}
+.select-styled::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: calc(((15px * 2) + 11px));
+  background: #a7a7a7;
+}
+.select-styled:hover {
+  background-color: #5a5a5a;
+}
+.select-styled:active, .select-styled.active {
+  background-color: #5a5a5a;
+}
+.select-styled:active:after, .select-styled.active:after {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #b3b3b3;
+  border-radius: 4px;
+}
+.select-options .select-item {
+  margin: 0;
+  padding: 12px 0;
+  text-indent: 15px;
+  border-bottom: 1px solid #676767;
+  transition: all 0.15s ease-in;
+}
+.select-options .select-item:hover {
+  background: #676767;
+}
+.select-options .select-item:last-child {
+  border-radius: 0 0 4px 4px;
+  border-bottom: 0;
+}
+.select-options .select-item[rel="hide"] {
+  display: none;
+}
+.select-options .select-item[rel="hide"] + .select-item {
+  border-radius: 4px 4px 0 0;
 }

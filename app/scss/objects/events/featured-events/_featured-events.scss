@@ -1,21 +1,20 @@
 .feature-events {
     .title {
         padding: 24px 0 35px;
-        @include center-v;
-        @include breakpoint(max-width 600px) {
-            flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(min-width 600px) {
+            flex-direction: row;
+            align-items: center;
         }
         .filter {
-            margin-left:27px;
-            select {
-                background: #b3b3b3;
-                border-radius: 4px;
-                border: 0;
-                padding: 10px 5px;
-                max-width: 244px;
-                color: #fff;
-            } 
-        }
+            margin-top:27px;
+            margin-left: 0;
+            @include breakpoint(min-width 600px) {
+                margin-top:0;
+                margin-left:27px;
+            }
+         }
     }
     .featured-events-slider {
         padding-top: 5px;
