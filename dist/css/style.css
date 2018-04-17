@@ -869,6 +869,7 @@ section:not(:first-child) .content p {
   display: block;
   padding: 35px;
   width: 250px;
+  font-size: 1.4rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -936,7 +937,6 @@ section:not(:first-child) .content p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2rem;
 }
 @media (max-width: 600px) {
   .header-user-panel {
@@ -1362,6 +1362,7 @@ section:not(:first-child) .content p {
           justify-content: center;
   letter-spacing: 0.6px;
   height: 100%;
+  font-size: 1.4rem;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;

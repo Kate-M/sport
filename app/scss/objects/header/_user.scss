@@ -1,7 +1,6 @@
 .header-user-panel {
     color: $color_white;
     @include center-v;
-    font-size: 1.2rem;
     @include breakpoint(max-width 600px) {
       flex-direction: column;
     }
