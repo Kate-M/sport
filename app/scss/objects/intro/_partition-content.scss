@@ -13,10 +13,12 @@
       height: 100%;
       background: $color_black;
       opacity: .2;
-      z-index: -1;
+      z-index: 0;
     }
 }
 .partition-info {
+    position: relative;
+    z-index: 2;
     padding: 93px 0 60px;
     color:$color_white;
     font-family: $font_SSL;
