@@ -680,7 +680,7 @@ body, html {
 
 body {
   overflow-x: hidden;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 0.4px;
 }
 
@@ -796,6 +796,11 @@ img {
   font-family: "StagSans-Bold", sans-serif;
   font-size: 2rem;
   color: #3f3f3f;
+}
+
+section:not(:first-child) .content p {
+  color: #3f3f3f;
+  line-height: 1.8;
 }
 
 .header-navigation-panel {
@@ -1502,7 +1507,7 @@ input:checked ~ .partition-content {
 .upcoming-events {
   background: #f6f6f6;
   position: relative;
-  padding-bottom: 44px;
+  padding-bottom: 40px;
 }
 .upcoming-events .title {
   padding: 37px 0;
@@ -1917,13 +1922,9 @@ input:checked ~ .partition-content {
   position: relative;
 }
 .experience .title {
-  padding: 43px 0 15px;
+  padding: 40px 0 15px;
 }
-.experience p {
-  line-height: 1.8;
-  font-size: 1.2rem;
-}
-.experience .experience-content {
+.experience .content {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1936,7 +1937,7 @@ input:checked ~ .partition-content {
           flex-direction: column;
 }
 @media (min-width: 600px) {
-  .experience .experience-content {
+  .experience .content {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
@@ -2124,8 +2125,11 @@ input:checked ~ .partition-content {
             transform: scale(1.05);
   }
 }
+.feature-events {
+  padding: 16px 0 40px;
+}
 .feature-events .title {
-  padding: 24px 0 35px;
+  padding-bottom: 25px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2298,4 +2302,18 @@ input:checked ~ .partition-content {
 }
 .select-options .select-item[rel="hide"] + .select-item {
   border-radius: 4px 4px 0 0;
+}
+
+.custom-packages {
+  text-align: center;
+  background: #e6e6e6 url(../images/custom.jpg) center no-repeat;
+  background-size: cover;
+  padding: 40px 0;
+}
+.custom-packages .content {
+  color: #3f3f3f;
+  font-size: 1.2rem;
+  padding: 14px 0 20px;
+  width: 50%;
+  margin: 0 auto;
 }

@@ -1,6 +1,7 @@
 .feature-events {
+    padding: 16px 0 40px;
     .title {
-        padding: 24px 0 35px;
+        padding-bottom: 25px;
         display: flex;
         flex-direction: column;
         @include breakpoint(min-width 600px) {
