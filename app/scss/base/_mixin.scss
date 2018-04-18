@@ -15,6 +15,10 @@
     background: url(../images/ico-sprites.png);
     background-position: $x $y;
   }
+  @mixin sprites-social($x, $y) {
+    background: url(../images/social-sprites.png);
+    background-position: $x $y;
+  }
   @mixin adaptiveWidth {
     @include breakpoint(max-width 767px) {
       width: 100%;
