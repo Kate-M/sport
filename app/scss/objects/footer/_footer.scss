@@ -99,7 +99,7 @@ footer {
         }
     }
     .bottom-navigation {
-        padding: 36px 0 50px;
+        padding: 35px 0;
         .item:last-child {
             @include breakpoint(min-width 768px) {
                 padding-left: 54px;
@@ -110,6 +110,45 @@ footer {
         p {
             font-family: $font_SSL;
             font-size: 1.4rem;
+        }
+    }
+    .copyright-wrap {
+        padding-bottom: 55px;
+        @include center-v;
+        justify-content: space-between;
+        line-height: 1;
+        @include breakpoint(max-width 600px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    .copyright {
+        font-size: 1rem;
+        display: flex;
+        align-self: flex-end;
+        @include breakpoint(max-width 600px) {
+            margin-top: 20px;
+        }
+        .nav {
+            display: flex;
+            font-family: $font_SSSBL;
+            .item {
+                padding-left: 4px;
+                &:first-child {
+                    padding-right: 4px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top:0;
+                        right: 0.5px;
+                        width: 1px;
+                        height: 100%;
+                        background:$color_white;
+                    }
+                }
+            }
         }
     }
 }
