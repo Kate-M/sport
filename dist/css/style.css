@@ -695,7 +695,6 @@ body {
   overflow-x: hidden;
   font-size: 1.2rem;
   letter-spacing: 0.4px;
-  background: url(../images/temp.jpg) center 0 no-repeat;
 }
 
 button {
@@ -2659,6 +2658,9 @@ footer .copyright .nav {
 }
 footer .copyright .nav .item {
   padding-left: 4px;
+}
+footer .copyright .nav .item:hover .link {
+  color: #024b78;
 }
 footer .copyright .nav .item:first-child {
   padding-right: 4px;

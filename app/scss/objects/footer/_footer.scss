@@ -134,6 +134,9 @@ footer {
             font-family: $font_SSSBL;
             .item {
                 padding-left: 4px;
+                &:hover .link{
+                    color:$color_main;
+                }
                 &:first-child {
                     padding-right: 4px;
                     position: relative;
