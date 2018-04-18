@@ -86,10 +86,19 @@
   .page-wrapper {
     transform: translateX(0);
     transition: transform .3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     &.open {
       transform: translateX(250px);
       transition: transform .3s;
     }
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  footer {
+    flex: 0 0 auto;
   }
   .content {
     flex: 1 0 auto;

@@ -27,9 +27,6 @@ footer {
                         position: relative;
                         border-radius:5px;
                         margin-bottom: 22px;
-                        .link:hover & {
-                            background: $color_main;
-                        }
                         &::after {
                             content: '';
                             height: 46px;
@@ -62,6 +59,7 @@ footer {
             }
         }
         .link {
+            display: inline-block;
             font-size: 1.1rem;
             &:hover {
                 color:$color_main;
