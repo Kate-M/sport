@@ -60,11 +60,12 @@
     padding: 0;
     background: transparent;
     letter-spacing: 0.4px;
+    line-height: 1;
     &:focus,&:active  {
       appearance: none;
       outline:none;
     }
-    &.button-learn {
+    &.button-transparent {
       border-radius:5px;
       border:1px solid $color_main;
       padding: 12px 16px;

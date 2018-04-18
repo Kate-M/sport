@@ -1,6 +1,7 @@
 .subscribe {
     text-align: center;
     padding: 36px 0 32px;
+    position: relative;
     .subscribe-result {
         position: absolute;
         bottom: 10px;
@@ -18,16 +19,26 @@
     }
     ::-moz-placeholder {
         font-size: 1.2rem;
-        color: $color_white;;
+        color: $color_white;
     }
     ::-webkit-input-placeholder {
         font-size: 1.2rem;
-        color: $color_white;;
+        color: $color_white;
     }
     .field {
+        padding: 0 13px;
         border-radius:5px;
+        height: 40px;
+        @include center-all;
+        border-width: 1px;
+        border-style: solid;
+        &:focus {
+            border-color: $color_main;
+        }
     }
     .submit {
+        line-height: 1;
+        height: 40px;
         position: relative;
         border-radius:5px;
         background:$color_main;
@@ -45,15 +56,11 @@
 }
 .subscribe-form {
     margin-top: 22px;
-    input {
-        height: 40px;
-        @include center-all;
-    }
     .field {
-        padding: 13px;
         background:#b3b3b3;
         color:$color_white;
         width: 288px;
+        border-color: transparent;
     }
     .submit {
         margin-left: 7px;

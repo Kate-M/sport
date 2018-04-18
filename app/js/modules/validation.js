@@ -9,8 +9,8 @@ function validateEmail(email) {
     result.text("");
   
     if (validateEmail(email)) {
-      result.text("Email is valid");
-      result.css("color", "#0f6036");
+      $('.modal').addClass('modal-on');
+      $(".modal .email")[0].value = email;
     } else {
       result.text("Email is not valid");
       result.css("color", "#cd4800");
