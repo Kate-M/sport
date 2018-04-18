@@ -695,6 +695,7 @@ body {
   overflow-x: hidden;
   font-size: 1.2rem;
   letter-spacing: 0.4px;
+  background: url(../images/temp.jpg) center 0 no-repeat;
 }
 
 button {
@@ -2514,7 +2515,7 @@ footer .navigation .list {
 }
 footer .navigation .list .item {
   width: 50%;
-  padding-top: 42px;
+  padding-top: 33px;
   -webkit-order: 0;
       -ms-flex-order: 0;
           order: 0;
@@ -2581,7 +2582,7 @@ footer .navigation .sub-list {
   margin-top: 13px;
 }
 footer .top-navigation {
-  padding-bottom: 45px;
+  padding: 10px 0 43px;
   position: relative;
 }
 footer .top-navigation::after {
@@ -2598,6 +2599,18 @@ footer .top-navigation::after {
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
-    margin-top: -117px;
+    margin-top: -113px;
   }
+}
+footer .bottom-navigation {
+  padding: 36px 0 50px;
+}
+@media (min-width: 768px) {
+  footer .bottom-navigation .item:last-child {
+    padding-left: 54px;
+  }
+}
+footer .footer-title p {
+  font-family: "StagSans-Light", sans-serif;
+  font-size: 1.4rem;
 }

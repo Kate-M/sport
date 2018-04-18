@@ -10,7 +10,7 @@ footer {
             flex-wrap: wrap;
             .item {
                 width: 50%;
-                padding-top: 42px;
+                padding-top: 33px;
                 order: 0;
                 min-width: 140px;
                 @include breakpoint(min-width 768px) {
@@ -79,7 +79,7 @@ footer {
         }
     }
     .top-navigation {
-        padding-bottom: 45px;
+        padding: 10px 0 43px;
         position: relative;
         &::after {
             content:'';
@@ -93,9 +93,23 @@ footer {
         .item:nth-child(2) {
             @include breakpoint(min-width 768px) {
                 order:1;
-                margin-top: -117px;
+                margin-top: -113px;
             }
             
+        }
+    }
+    .bottom-navigation {
+        padding: 36px 0 50px;
+        .item:last-child {
+            @include breakpoint(min-width 768px) {
+                padding-left: 54px;
+            }
+        }
+    }
+    .footer-title {
+        p {
+            font-family: $font_SSL;
+            font-size: 1.4rem;
         }
     }
 }
