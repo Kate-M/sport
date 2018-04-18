@@ -649,9 +649,23 @@ h1, figure, fieldset {
 input, select, textarea, option {
   -webkit-appearance: none;
   border-radius: 0;
+  border: 0;
+  letter-spacing: 0.4px;
 }
 input:focus, input:active, select:focus, select:active, textarea:focus, textarea:active, option:focus, option:active {
   outline: 0;
+}
+
+:-ms-input-placeholder {
+  letter-spacing: 0.4px;
+}
+
+::-moz-placeholder {
+  letter-spacing: 0.4px;
+}
+
+::-webkit-input-placeholder {
+  letter-spacing: 0.4px;
 }
 
 label {
@@ -694,6 +708,7 @@ button {
   border: 0;
   padding: 0;
   background: transparent;
+  letter-spacing: 0.4px;
 }
 button:focus, button:active {
   -webkit-appearance: none;
@@ -912,12 +927,14 @@ section:not(:first-child) .content p {
 .header-search-panel :-ms-input-placeholder {
   font-size: 1.1rem;
   color: #ababab;
-  letter-spacing: 0.4px;
+}
+.header-search-panel ::-moz-placeholder {
+  font-size: 1.1rem;
+  color: #ababab;
 }
 .header-search-panel ::-webkit-input-placeholder {
   font-size: 1.1rem;
   color: #ababab;
-  letter-spacing: 0.4px;
 }
 
 .search-field {
@@ -1109,7 +1126,7 @@ section:not(:first-child) .content p {
   padding: 93px 0 60px;
   color: #ffffff;
   font-family: "StagSans-Light", sans-serif;
-  height: 500px;
+  height: 502px;
 }
 @media (max-width: 600px) {
   .partition-info {
@@ -1388,7 +1405,7 @@ input:checked ~ .partition-content {
 
 .partition-content-list {
   position: relative;
-  height: 500px;
+  height: 502px;
 }
 
 .partition-content-item {
@@ -1400,6 +1417,7 @@ input:checked ~ .partition-content {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
 }
 
 .tab-input {
@@ -1508,7 +1526,7 @@ input:checked ~ .partition-content {
 .upcoming-events {
   background: #f6f6f6;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 46px;
 }
 .upcoming-events .title {
   padding: 37px 0;
@@ -1757,7 +1775,7 @@ input:checked ~ .partition-content {
   }
 }
 .experience .video-slider .slick-slide {
-  height: 373px;
+  height: 353px;
 }
 @media (max-width: 767px) {
   .experience .video-slider .slick-slide {
@@ -1923,7 +1941,7 @@ input:checked ~ .partition-content {
   position: relative;
 }
 .experience .title {
-  padding: 40px 0 15px;
+  padding: 40px 0 16px;
 }
 .experience .content {
   display: -webkit-flex;
@@ -1967,12 +1985,12 @@ input:checked ~ .partition-content {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 374px;
+  height: 353px;
   position: relative;
 }
 @media (min-width: 768px) {
   .experience .video-slider {
-    height: 393px;
+    height: 373px;
   }
 }
 .experience .video-slider::after {
@@ -2127,7 +2145,7 @@ input:checked ~ .partition-content {
   }
 }
 .feature-events {
-  padding: 16px 0 40px;
+  padding: 37px 0 40px;
 }
 .feature-events .title {
   padding-bottom: 25px;
@@ -2159,7 +2177,7 @@ input:checked ~ .partition-content {
   }
 }
 .feature-events .featured-events-slider {
-  padding-top: 5px;
+  padding-top: 3px;
 }
 .feature-events .event-item-wrap {
   max-width: 146px;
@@ -2317,4 +2335,88 @@ input:checked ~ .partition-content {
   padding: 14px 0 20px;
   width: 50%;
   margin: 0 auto;
+}
+
+.subscribe {
+  text-align: center;
+  padding: 36px 0 32px;
+}
+.subscribe .subscribe-result {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.form :-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.form ::-moz-placeholder {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.form ::-webkit-input-placeholder {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.form .field {
+  border-radius: 4px;
+}
+.form .submit {
+  position: relative;
+  border-radius: 4px;
+  background: #024b78;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.form .submit:hover {
+  border: 1px solid #024b78;
+  background: #ffffff;
+  color: #024b78;
+}
+
+.subscribe-form {
+  margin-top: 22px;
+}
+.subscribe-form input {
+  height: 40px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.subscribe-form .field {
+  padding: 13px;
+  background: #b3b3b3;
+  color: #ffffff;
+  width: 288px;
+}
+.subscribe-form .submit {
+  margin-left: 7px;
 }

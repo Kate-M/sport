@@ -13,10 +13,21 @@
   input,select, textarea, option {
     -webkit-appearance: none;
     border-radius:0;
+    border: 0;
+    letter-spacing: 0.4px;
     &:focus, &:active {
       outline:0;
     }
   }
+  :-ms-input-placeholder {
+    letter-spacing: 0.4px;
+}
+::-moz-placeholder {
+    letter-spacing: 0.4px;
+}
+::-webkit-input-placeholder {
+    letter-spacing: 0.4px;
+}
   label {
     cursor: pointer;
     user-select: none;
@@ -49,6 +60,7 @@
     border: 0;
     padding: 0;
     background: transparent;
+    letter-spacing: 0.4px;
     &:focus,&:active  {
       appearance: none;
       outline:none;

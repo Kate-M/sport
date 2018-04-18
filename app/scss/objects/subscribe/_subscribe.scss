@@ -1,0 +1,61 @@
+.subscribe {
+    text-align: center;
+    padding: 36px 0 32px;
+    .subscribe-result {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+.form {
+    @include center-all;
+    :-ms-input-placeholder {
+        font-size: 1.2rem;
+        color: $color_white;
+    }
+    ::-moz-placeholder {
+        font-size: 1.2rem;
+        color: $color_white;;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 1.2rem;
+        color: $color_white;;
+    }
+    .field {
+        border-radius:4px;
+    }
+    .submit {
+        position: relative;
+        border-radius:4px;
+        background:$color_main;
+        text-transform: uppercase;
+        color: $color_white;
+        padding: 0 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid $color_main;
+            background:$color_white;
+            color: $color_main;
+        }
+    }
+}
+.subscribe-form {
+    margin-top: 22px;
+    input {
+        height: 40px;
+        @include center-all;
+    }
+    .field {
+        padding: 13px;
+        background:#b3b3b3;
+        color:$color_white;
+        width: 288px;
+    }
+    .submit {
+        margin-left: 7px;
+    }
+}

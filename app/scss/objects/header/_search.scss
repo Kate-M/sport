@@ -19,12 +19,14 @@
     :-ms-input-placeholder {
       font-size: 1.1rem;
       color: #ababab;
-      letter-spacing: 0.4px;
+    }
+    ::-moz-placeholder {
+      font-size: 1.1rem;
+      color: #ababab;
     }
     ::-webkit-input-placeholder {
       font-size: 1.1rem;
       color: #ababab;
-      letter-spacing: 0.4px;
     }
   }
   .search-field {
