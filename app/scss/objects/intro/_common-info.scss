@@ -16,7 +16,7 @@
     letter-spacing: .6px;
     text-transform: uppercase;
     padding: 17px 26px;
-    border-radius:3px;
+    border-radius:5px;
     align-self: flex-start;
     background: transparentize($color_white, .8);
     
@@ -44,7 +44,7 @@
       letter-spacing: 3px;
       padding: 8px 0;
       min-width: 48px;
-      border-radius:3px;
+      border-radius:5px;
       border: 1px solid transparentize($color_white, .5);
       background: transparentize($color_white, .7);
       margin-bottom: 10px;

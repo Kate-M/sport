@@ -21,7 +21,7 @@
   background-color: #b3b3b3;
   padding: 11px 15px;
   transition:all 0.2s ease-in;
-  border-radius: 4px;
+  border-radius: 5px;
   &::after {
     content:"";
     width: 11px;
@@ -64,7 +64,7 @@
   padding: 0;
   list-style: none;
   background-color: #b3b3b3;
-  border-radius: 4px;
+  border-radius: 5px;
   .select-item {
     margin: 0;
     padding: 12px 0;
@@ -75,13 +75,13 @@
       background: darken(#b3b3b3, 30%);
     }
     &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 5px 5px;
         border-bottom:0;
     }
     &[rel="hide"] {
       display: none;
       & + .select-item {
-        border-radius: 4px 4px 0 0;
+        border-radius: 5px 5px 0 0;
       }
     }
   }
