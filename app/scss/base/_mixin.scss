@@ -50,7 +50,7 @@
       margin-right:calc(((-720px / 1.05) / 2) + 1.05rem);
     }
     @include breakpoint(min-width 992px) {
-      margin-right:calc(((-938px/ 1.05) / 2) + 0.66rem);
+      margin-right:calc(((-938px/ 1.05) / 2) + 0.6rem);
     }
   }
 }
