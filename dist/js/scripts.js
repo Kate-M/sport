@@ -13577,6 +13577,9 @@ $(document).ready(function () {
     setMarginPrevButton();
   });
   
+    $preloader = $('.loaderArea'),
+    $preloader.delay(2000).fadeOut(2000);
+
 $('.partition-button').on('click', function () {
     $(this).next().toggleClass('open');
 });
